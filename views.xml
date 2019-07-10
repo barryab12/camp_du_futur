@@ -1,0 +1,12 @@
+<odoo>
+    <record id="python_view_employee_form" model="ir.ui.view">
+        <field name="inherit_id" ref="hr.view_employee_form" />
+        <field name="model">hr.employee</field>
+        <field name="arch" type="xml">
+            <field name="job_title" position="after">
+                <field name="nationalite" />
+                <field name="probleme" />
+            </field>
+        </field>
+    </record>
+</odoo>
