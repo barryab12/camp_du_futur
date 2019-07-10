@@ -5,7 +5,7 @@
     'description': """
         ce module permet d'ajouter un new champ
     """,
-    'author': "Konate Souleymane",
+    'author': "Souleymane",
     'depends': ['base'],
     'data':["vue.xml"],
     'website': "http://www.groupecerco.com"

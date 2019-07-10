@@ -5,6 +5,8 @@
         <field name="arch" type="xml">
             <field name="date_order" position="after">
                 <field name="commentaire" />
+                <field name="selection"/>
+                <field name="many"/>
             </field>
         </field>
     </record>
