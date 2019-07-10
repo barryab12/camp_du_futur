@@ -1,0 +1,11 @@
+<odoo> 
+    <record id="tester" model="ir.ui.view">
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="model">account.payment</field>
+        <field name="arch" type= "xml">
+            <field name="sale.order.form" position= "after">
+                <field name= "numero"/>  
+            </field>
+        </field>
+    </record>
+</odoo>
