@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Reparation",
+    'name': "Tache du jour",
 
-    'summary': """Service de reparation""",
+    'summary': """Votre service de réparation en ligne.""",
 
     'description': """
-        Nous resolvons tous vos problemes
-        de mobile
+        Création d'un champ de type sélection
+        et many2one
     """,
 
     'author': "Kev",

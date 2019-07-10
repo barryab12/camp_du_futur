@@ -4,4 +4,6 @@ class NouveauModele(models.Model):
     _name = 'repair.order'
     _inherit = 'repair.order'
     
-    probleme = fields.Char(string="Problème rencontré", required=True)
+    probleme = fields.Selection(string="Problème rencontré",selection=[('SOFTWARE','Logiciel'),('MATERIAL','Matériel')])
+
+    info = fields.Many2one(comodel_name="account.payment", string='Methode de payement', required=True)
