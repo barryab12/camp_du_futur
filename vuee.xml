@@ -1,0 +1,17 @@
+<odoo>
+    <record id="testons_view_order_form" model="ir.ui.view">
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="votre_salaire" />
+            </field>
+            <field name="payment_term_id" position="after">
+                <field name="multiplier" />
+            </field>
+            <field name="validity_date" position="after">
+                <field name="nouveau_salaire" />
+            </field>
+        </field>
+    </record>
+</odoo>
