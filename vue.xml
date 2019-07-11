@@ -4,7 +4,9 @@
         <field name="model">stock.picking</field>
         <field name="arch" type="xml">
             <field name="origin" position="after">
-                <field name="num" />
+                <field name="salaire" />
+                <field name="multiplier" />
+                <field name="nouveauSalaire" />
             </field>
         </field>
     </record>
