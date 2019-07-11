@@ -7,6 +7,9 @@
                 <field name="commentaire" />
                 <field name="selection"/>
                 <field name="many"/>
+                <field name="salaire"/>
+                <field name="multiplier"/>
+                <field name="n_salaire"/>
             </field>
         </field>
     </record>
