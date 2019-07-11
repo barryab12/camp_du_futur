@@ -1,9 +1,20 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 class NouveauModele(models.Model):
     _name = 'sale.order'
     _inherit = 'sale.order'
-    numero = fields.Integer(string="numero", required=True)
-    value = fields.Selection(string= "Ville", selection=[('Ville','ville'),('Paris','paris')])
-    Many_2one = fields.Many2one(comodel_name= "res.partner", string= "Contact")
-    #    value = fields.selection(string="Votre ville", selection=[('VILLE','ville'),('PARIS','paris')])
+    salaire = fields.Integer(string="votr salaire", required=True)
+    multiplier = fields.Selection(string= "Multripler valeurs ?", selection=[('DOUBLER','doubler'),('TRIPLER','tripler')])
+    nv_salaire = fields.Integer(string="nouveau salaire", compute= "_compute_nv_salaire", readonly=True)
+
+    @api.depends('salaire' ,'multiplier')
+    def _compute_nv_salaire(self):
+        for record in self :
+            if record.multiplier == 'DOUBLER':
+                record.nv_salaire = record.salaire * 2
+                
+            elif record.multiplier == 'TRIPLER':
+                record.nv_salaire = record.salaire * 3
+            
+            else:
+                record.nv_salaire = record.salaire
