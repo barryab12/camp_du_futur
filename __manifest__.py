@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "tache1",
+    'name': "josh",
     'summary': """ajout d'un nouveau champ dans un module""",
     'description': """
         Ce module permet d'ajouter le champ un type selection et  un champ de type many2one dans le module Employés
