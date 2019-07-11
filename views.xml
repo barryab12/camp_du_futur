@@ -1,0 +1,13 @@
+<odoo>
+    <record id="test_view_order_form" model="ir.ui.view">
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <field name="validity_date" position="after">
+                <field name="value" />
+                <field name="numero"/>
+                <field name="Many_2one"/>
+            </field>
+        </field>
+    </record>
+</odoo>

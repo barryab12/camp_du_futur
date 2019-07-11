@@ -1,16 +1,20 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "rome",
-    'summary': """Je suis en train de tester un module""",
+    'name': "tacha",
+
+    'summary': """Un petit exemple""",
+
     'description': """
-        Ce module permet d'ajouter de nouveaux champs qui sont:
-            - age
-            - Statut
-            - etc
+        Un descriptif de mon premier projet
     """,
-    'author': "JUDITH TAPE",
-    'depends': ['base'],
-    'data':["vue.xml"],
-    'website': "http://www.groupecerco.com"
+
+    'author': "JUDITH tape",
+    'website': "http://www.groupecerco.com",
     
+
+    'depends': ['base'],
+
+    'data': [
+        'views.xml',
+    ],
 }

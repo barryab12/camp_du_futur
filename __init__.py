@@ -1,1 +1,3 @@
-from . import tester
+# -*- coding : utf-8 -*-
+
+from . import test
