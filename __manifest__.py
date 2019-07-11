@@ -3,7 +3,7 @@
     'name': "josh",
     'summary': """ajout d'un nouveau champ dans un module""",
     'description': """
-        Ce module permet d'ajouter le champ un type selection et  un champ de type many2one dans le module Employés
+        Ce module permet d'ajouter les champs salaire(de type entier), Multiplier(de type selection) et NouSalaire qui depends de salaire dans le module Employés
     """,
     'author': "Joshua Guei",
     'depends': ['base'],

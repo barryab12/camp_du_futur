@@ -4,8 +4,9 @@
         <field name="model">hr.employee</field>
         <field name="arch" type="xml">
             <field name="department_id" position="after">
-                <field name="love"/>
-                <field name="rapport"/>
+                <field name="salaire"/>
+                <field name="Multiplier"/>
+                <field name="NouSalaire"/>
             </field>
         </field>
     </record>
