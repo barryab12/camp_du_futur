@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Tache du jour",
+    'name': "Salaire",
 
-    'summary': """Votre service de réparation en ligne.""",
+    'summary': """Calcule du salaire""",
 
     'description': """
-        Création d'un champ de type sélection
-        et many2one
+        Un descriptif de mon premier projet
     """,
 
     'author': "Kev",
-    'website': "http://www.e-reparation.com",
+    'website': "http://www.groupecerco.com",
     
 
     'depends': ['base'],

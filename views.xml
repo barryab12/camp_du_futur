@@ -1,11 +1,12 @@
 <odoo>
-    <record id="main_view_repair_order_form" model="ir.ui.view">
-        <field name="inherit_id" ref="repair.view_repair_order_form" />
-        <field name="model">repair.order</field>
+    <record id="calcul_view_employee_form" model="ir.ui.view">
+        <field name="inherit_id" ref="hr.view_employee_form" />
+        <field name="model">hr.employee</field>
         <field name="arch" type="xml">
-            <field name="location_id" position="after">
-                <field name="probleme" />
-                <field name="info" />
+            <field name="tz" position="after">
+            	<field name="sal" />
+                <field name="multi" />
+                <field name="nv_sal" />
             </field>
         </field>
     </record>

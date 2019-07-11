@@ -1,9 +1,23 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 class NouveauModele(models.Model):
-    _name = 'repair.order'
-    _inherit = 'repair.order'
-    
-    probleme = fields.Selection(string="Problème rencontré",selection=[('SOFTWARE','Logiciel'),('MATERIAL','Matériel')])
+    _name = 'hr.employee'
+    _inherit = 'hr.employee'
 
-    info = fields.Many2one(comodel_name="account.payment", string='Methode de payement', required=True)
+    sal = fields.Integer(string="Votre salaire", required=True)
+
+    multi = fields.Selection(string="Multiplier",selection=[('DOUBLE','Doubler'),('TRIPLE','Tripler')])
+
+    nv_sal = fields.Integer(string="Nouveau salaire", compute="_compute_nv_sal", store=True)
+
+    @api.depends('sal', 'multi')
+    def _compute_nv_sal(self):
+    	for record in self:
+    		if record.multi == 'DOUBLE':
+    			record.nv_sal = record.sal * 2
+
+    		elif record.multi == 'TRIPLE':
+    			record.nv_sal = record.sal * 3
+
+    		else:
+    			record.nv_sal = record.sal
