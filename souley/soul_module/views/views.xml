@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+    <record id="action_menu_pere" model="ir.actions.act_window">
+      <field name="name">Pere</field>
+      <field name="res_model">en.pere</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[]</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"> enregistrement d'un pere</p>
+      </field>
+    </record>
+
+    <menuitem id="menu" name="Extrait d'acte de naissance" groups="base.group_user"/>
+
+    <menuitem id="menu_pere" parent="menu" name="Pere" groups="base.group_user" action="action_menu_pere"/>
+
+   <!--  <menuitem id="menu_inscription_mere" parent="menu_pere" name="mere" groups="base.group_user" action="action_menu_mere"/> -->
+
+   <!-- en.mere-->
+
+       <record id="action_menu_mere" model="ir.actions.act_window">
+      <field name="name">Mere</field>
+      <field name="res_model">en.mere</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[]</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"> enregistrement d'une mere</p>
+      </field>
+    </record>
+
+    <menuitem id="menu" name="Extrait d'acte de naissance" groups="base.group_user"/>
+
+    <menuitem id="menu_mere" parent="menu" name="Mere" groups="base.group_user" action="action_menu_mere"/>
+ 
+  </data>
+
+  <!-- form tree pere-->
+
+   <record id="pere_tree_view" model="ir.ui.view">
+
+ <field name="name">Pere Tree</field>
+
+ <field name="model">en.pere</field>
+
+ <field name="arch" type="xml">
+
+           <tree string="Pere">
+
+          <field name="nom"/>
+
+          <field name="prenom"/>
+
+          <field name="d_naissance"/>
+
+          <field name="ville_n"/>
+
+          <field name="prof"/>
+
+            </tree>
+
+  </field>
+
+   </record>
+
+   <!-- form tree mere -->
+
+      <record id="mere_tree_view" model="ir.ui.view">
+
+ <field name="name">Mere Tree</field>
+
+ <field name="model">en.mere</field>
+
+ <field name="arch" type="xml">
+
+           <tree string="Mere">
+
+          <field name="nom"/>
+
+          <field name="prenom"/>
+
+          <field name="d_naissance"/>
+
+          <field name="ville_n"/>
+
+          <field name="prof"/>
+
+            </tree>
+
+  </field>
+
+   </record>
+
+   <!--pere form view-->
+
+<record id="pere_free_view" model="ir.ui.view">
+
+<field name="name">Pere Form</field>
+
+<field name="model">en.pere</field>
+
+<field name="arch" type="xml">
+
+          <form string="Pere">
+
+                <sheet>
+
+                    <field name="photo" widget="image" class="oe_left oe_avatar" />
+
+                    <div class="oe_title">
+
+                      <h1> <field name="nom" placeholder="Votre nom"/>  </h1>
+                      <h2> <field name="prenom" placeholder="Votre prenom"/> </h2>
+                    </div>                    
+
+     <group>
+
+                       <group>
+
+                              <field name="d_naissance"/>
+
+                              <field name="ville_n"/>
+
+                        </group>
+
+                        <group>
+
+                              <field name="prof"/>
+
+
+                        </group>
+
+                    </group>
+
+           </sheet>
+
+    </form>
+
+</field>
+
+</record>
+
+ <!-- mere form view -->
+
+ <record id="mere_free_view" model="ir.ui.view">
+
+<field name="name">Mere Form</field>
+
+<field name="model">en.mere</field>
+
+<field name="arch" type="xml">
+
+          <form string="Mere">
+
+                <sheet>
+
+                    <field name="photo" widget="image" class="oe_left oe_avatar" />
+
+                    <div class="oe_title">
+
+                      <h1> <field name="nom" placeholder="Votre nom"/>  </h1>
+                      <h2> <field name="prenom" placeholder="Votre prenom"/> </h2>
+                    </div>                    
+
+     <group>
+
+                       <group>
+
+                              <field name="d_naissance"/>
+
+                              <field name="ville_n"/>
+
+                        </group>
+
+                        <group>
+
+                              <field name="prof"/>
+
+
+                        </group>
+
+                    </group>
+
+           </sheet>
+
+    </form>
+
+</field>
+
+</record>
+</odoo> 
+
