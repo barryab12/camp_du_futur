@@ -1,0 +1,110 @@
+<odoo>
+	<!-- mod.pere action window -->
+	<record id="mod_pere_action" model="ir.actions.act_window">
+		<field name="name">Père</field>
+		<field name="res_model">mod.pere</field>
+		<field name="view_mode">tree,form</field>
+		<field name="view_type">form</field>
+		<field name="help" type="html">
+			<p class="oe_view_nocontent_create">
+				<!-- Add Text Here -->
+			</p><p>
+				<!-- More details about what a user can do with this object will be OK --> 
+			</p>
+		</field>
+	</record>
+	
+
+	<!-- mod.mere action window --> -->
+	<record id="mod_mere_action" model="ir.actions.act_window">
+		<field name="name">Mère</field>
+		<field name="res_model">mod.mere</field>
+		<field name="view_mode">tree,form</field>
+		<field name="view_type">form</field>
+		<field name="help" type="html">
+			<p class="oe_view_nocontent_create">
+				Add Text Here
+			</p><p>
+				More details about what a user can do with this object will be OK 
+			</p>
+		</field>
+	</record>
+	
+	
+	<!-- mod.pere tree view -->
+	<record id="mod_pere_view_tree" model="ir.ui.view">
+		<field name="name">mod.pere.view.tree</field>
+		<field name="model">mod.pere</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="nom"/>
+				<field name="prenom"/>
+				<field name="dn"/>
+				<field name="ville_n"/>
+				<field name="prof"/>
+			</tree>
+		</field>
+	</record>
+	
+	<record id="mod_mere_view_tree" model="ir.ui.view">
+		<field name="name">mod.mere.view.tree</field>
+		<field name="model">mod.mere</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="nom"/>
+				<field name="prenom"/>
+				<field name="dn"/>
+				<field name="ville_n"/>
+				<field name="prof"/>
+			</tree>
+		</field>
+	</record>
+
+	<!-- mod.pere form view -->
+	<record id="mod_pere_view_form" model="ir.ui.view">
+		<field name="name">mod.pere.view.form</field>
+		<field name="model">mod.pere</field>
+		<field name="arch" type="xml">
+			<form string="">
+				<sheet>						
+					<field name="photo" widget="image" class="oe_avatar"/>							
+					<div class="oe_title">
+						<h1><field name="nom" placeholder="Nom"/></h1>
+						<h2><field name="prenom" placeholder="Prénoms"/></h2>
+						<h4><field name="prof" placeholder="Profession"/></h4>
+						<group>
+							<field name="dn"/>
+							<field name="ville_n"/>
+						</group>
+					</div>					
+				</sheet>							
+			</form>
+		</field>
+	</record>
+
+	<!-- mod.pere form view -->
+	<record id="mod_mere_view_form" model="ir.ui.view">
+		<field name="name">mod.mere.view.form</field>
+		<field name="model">mod.mere</field>
+		<field name="arch" type="xml">
+			<form string="">
+				<sheet>						
+					<field name="photo" widget="image" class="oe_avatar"/>							
+					<div class="oe_title">
+						<h1><field name="nom" placeholder="Nom"/></h1>
+						<h2><field name="prenom" placeholder="Prénoms"/></h2>
+						<h4><field name="prof" placeholder="Profession"/></h4>
+						<group>
+							<field name="dn"/>
+							<field name="ville_n"/>
+						</group>
+					</div>					
+				</sheet>							
+			</form>
+		</field>
+	</record>
+
+	<menuitem id="menu_extrait" name="Extrait de naissance"/>
+	<menuitem id="menu_extrait_pere" parent="menu_extrait" name="Père" action="mod_pere_action"/>
+	<menuitem id="menu_extrait_mere" parent="menu_extrait" name="Mère" action="mod_mere_action"/>
+</odoo>
