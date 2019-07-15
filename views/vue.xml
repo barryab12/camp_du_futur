@@ -1,0 +1,107 @@
+
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<odoo>
+  <record id="pere_menu_action" model="ir.actions.act_window">
+    <field name="name">Pere</field>
+    <field name="res_model">pere.pere</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">mettre les coordonner de pere</p>
+    </field>
+  </record>
+  <menuitem id="menu" name="Extrait"/>
+  <menuitem id="pere_menu" name="Pere" parent="menu" action="pere_menu_action"/>
+
+  <record id="mere_menu_action" model="ir.actions.act_window">
+    <field name="name">Mere</field>
+    <field name="res_model">mere.mere</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">mettre les coordonner de mere</p>
+    </field>
+  </record>
+  <menuitem id="menu" name="Extrait"/>
+  <menuitem id="mere_menu" name="Mere" parent="menu" action="mere_menu_action"/>
+
+<!-- form tree-->
+  <record id="pere_tree" model="ir.ui.view">
+    <field name="name">Pere</field>
+    <field name="model">pere.pere</field>
+    <field name="arch" type="xml">
+      <tree string="Pere">
+        <field name="nom" />
+        <field name="Prenoms" />
+        <field name="date" />
+        <field name='ville'/>
+        <field name ='profession'/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="mere_tree" model="ir.ui.view">
+    <field name="name">Mere</field>
+    <field name="model">mere.mere</field>
+    <field name="arch" type="xml">
+      <tree string="Mere">
+        <field name="nom" />
+        <field name="Prenoms" />
+        <field name="date" />
+        <field name='ville'/>
+        <field name ='profession'/>
+      </tree>
+    </field>
+  </record>
+
+<!-- form view-->
+  <record id="pere_view" model="ir.ui.view">
+    <field name="name">pere.form</field>
+    <field name="model">pere.pere</field>
+    <field eval="1" name="priority"/>
+    <field name="arch" type="xml">
+      <form string="pere">
+        <sheet>
+          <notebook>
+            <page string="Gestion des Pères">
+              <field name="photo" widget="image" class="oe_avatar" />
+              <group>
+                <h1><field name="nom" placeholder="Nom" /></h1>
+                <field name="Prenom" />
+                <field name="date" />
+                <field name='ville'/>
+                <field name ='profession'/>
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="mere_view" model="ir.ui.view">
+    <field name="name">mere.form</field>
+    <field name="model">mere.mere</field>
+    <field eval="1" name="priority"/>
+    <field name="arch" type="xml">
+      <form string="mere">
+        <sheet>
+          <notebook>
+            <page string="Gestion des Mères">
+              <field name="photo" widget="image" class="oe_avatar" />
+              <group>
+                <h1><field name="nom" placeholder="Nom" /></h1>
+                <field name="Prenom" />
+                <field name="date" />
+                <field name='ville'/>
+                <field name ='profession'/>
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+</odoo>
