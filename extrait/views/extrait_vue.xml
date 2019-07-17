@@ -1,0 +1,121 @@
+<odoo>
+
+	<report
+		id="report_session"
+		model="mod.extrait"
+		string="Extrait PDF"
+		name="famille.mod_extrait_template"
+		file="report_session_view"
+		report_type="qweb-pdf"
+		/>
+
+	<template id="mod_extrait_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page">
+                    <div>
+                        <table style="width: 100%; text-align: center">
+                            <tr >
+                                <td>REPUBLIQUE DE CÔTE D'IVOIRE</td>
+                                <td rowspan="6"><img src="C:\Users\Kev\Desktop\Stage\famille\static/ci.png" alt="L'armoirie de la Côte d'Ivoire" style="width: 100px;height: 120px;" /></td>
+                                <td>E X T R A I T</td>
+                            </tr>
+                            <tr>
+                                <td>Union - Discipline - Travail</td>
+                                
+                                <td>du registre des actes de l'Etat Civil</td>
+                            </tr>
+                            <tr>
+                                <td>SOUS-PREFECTURE DE <b t-field="doc.centre"/></td>
+                                <td>pour l'année ......... </td>
+                            </tr>
+                            <tr>
+                                <td>...........</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ETAT CIVIL</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>...........</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table><br/><br/><br/>
+                        <table style="width: 100%; text-align: left; border-bottom: 1px solid black; padding: 2px">
+                            <tr style="width: 100%">
+                                <td style="width:45%; text-align: center">CENTRE DE <b t-field="doc.centre"/></td>
+                                <td style="padding-left: 20%">Le <b t-field="doc.date"/></td>
+                            </tr>
+                            <tr style="width: 100%;">
+                                <td style="width:45%;  text-align: center">N°............ du ................ </td>
+                                <td style="padding-left: 20%"> <b t-field="doc.heure"/> </td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width:45%; text-align: center">du registre</td>
+                                <td style="padding-left: 20%">est né(e) <b t-field="doc.noms"/></td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width:45%; text-align: center"><br/></td>
+                                <td style="padding-left: 20%">à <b t-field="doc.lieu"/></td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td rowspan="2" style="width:45%; text-align: center">NAISSANCE DE :</td>
+                                <td style="padding-left: 20%">fils(le) de <b t-field="doc.pere.nom"/> <b t-field="doc.pere.prenom"/></td>
+                            </tr>
+                            <tr style="width: 100%">
+                                
+                                <td style="padding-left: 20%">et de <b t-field="doc.mere.nom"/> <b t-field="doc.mere.prenom"/></td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width:45%; text-align: center"><b t-field="doc.noms"/> </td>                               
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width:45%; text-align: center">.....................................................................</td>
+                                <td></td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width:45%; text-align: center">.....................................................................</td>
+                                <td></td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width:45%; text-align: center">.....................................................................<br/><br/></td>
+                                <td></td>
+                            </tr>
+                        </table><br/>
+                        <table style="width: 100%; text-align: left; border-top: 1px solid black">
+                            <tr>
+                                <td style="width: 100%; text-align: center"><br/>MENTION (éventuellement)</td>
+                            </tr>
+                            <tr>
+                                <td>Marié(e) le ........................à.............................</td>
+                            </tr>
+                            <tr>
+                                <td>Avec.....................................................................</td>
+                            </tr>
+                            <tr>
+                                <td>mariage dissous par décision de divorce en date du.......................</td>
+                            </tr>
+                            <tr>
+                                <td>décédé(e) le.................................................................</td>
+                            </tr>
+                            <tr>
+                                <td>...................................................................................</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 100%; text-align: center">Certifié le présent extrait conforme aux indications portées au registre.</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 100%; text-align: right"><br/><br/>  Délivré à <b t-field="doc.centre"/> le <b t-field="doc.fait"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>
