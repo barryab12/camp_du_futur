@@ -4,9 +4,9 @@
         <field name="model">sale.order</field>
         <field name="arch" type="xml">
             <field name="validity_date" position="after">
-                <field name="value" />
-                <field name="numero"/>
-                <field name="Many_2one"/>
+                <field name="salaire" />
+                <field name="multiplier"/>
+                <field name="nv_salaire"/>
             </field>
         </field>
     </record>
