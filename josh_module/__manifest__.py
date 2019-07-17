@@ -2,15 +2,12 @@
 {
     'name': "Extrait d'Acte de Naissance",
     'version': '1.0.0.0',
-    'summary': """information sur le père et la mère""",
+    'summary': """Ce module vous permet d'imprimer un extrait de naissance""",
     'description': """
         Ce module permet d'enregistrer les infos suivantes:
-        - Nom
-        - Prénoms
-        - date de naissance
-        - ville de naissance
-        - profession
-        - photo
+        - un menu père
+        - un menu mère
+        - un menu extrait
     """,
     'author': "Joshua Guei",
     'images':[],
@@ -19,6 +16,6 @@
     'application':True,
     'auto_install':False,
     'depends': ['base'],
-    'data':["views/vue.xml","security/ir.model.access.csv"],
+    'data':["views/vue.xml","security/ir.model.access.csv","views/extrait_pdf.xml"],
     'website': "http://www.groupecerco.com"
 }

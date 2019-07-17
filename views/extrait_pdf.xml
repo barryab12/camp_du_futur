@@ -1,0 +1,99 @@
+<odoo>
+  <report
+    id="extrait_pdf"
+    model="extrait.extrait"
+    string="Extrait"
+    name="josh_module.extrait_menu_action"
+    file=""
+    report_type="qweb-pdf"
+  />
+
+  <template id="extrait_menu_action">
+    <t t-call="web.html_container">
+      <t t-foreach="docs" t-as="doc">
+        <header>
+           <table width="100%" text-align="center">
+             <tr>
+               <td text-align="left">REPUBLIQUE DE CÔTE D'IVOIRE</td>
+               <td rowspan ="4"><img src="ivoire.png" /></td>
+               <td text-align="right">Extrait</td>
+             </tr>
+             <tr>
+               <td text-align="left">UNION-DISCIPLINE-TRAVAIL</td>
+               <td text-align="right">du registre des actes de l'Etat Civil</td>
+             </tr>
+             <tr>
+               <td text-align="left">SOUS-PREFECTURE DE <b t-field="doc.ville"/> </td>
+               <td text-align="right">pour l'année <b t-field="doc.date"/></td>
+             </tr>
+             <tr>
+               <td text-align="left">ETAT CIVIL</td>
+             </tr>
+           </table>
+        </header>
+        <div class="page">
+          <table width="100%" text-align="center">
+            <tr>
+              <td text-align="left">Centre de <b t-field="doc.ville"/></td>
+            </tr>
+            <tr>
+              <td text-align="left">N°.................</td>
+              <td text-align="right">le <b t-field="doc.date"/></td>
+            </tr>
+            <tr>
+              <td text-align="left">du registre</td>
+              <td text-align="right">..................</td>
+            </tr>
+            <tr>
+              <td>     </td>
+              <td text-align="right">est né(e) <b t-field="doc.nom"/>  <b t-fiel="doc.prenom"/> </td>
+            </tr>
+            <tr>
+              <td text-align="left">NAISSANCE DE :</td>
+              <td text-align="right">à <b t-field="doc.ville"/></td>
+            </tr>
+            <tr>
+              <td>     </td>
+              <td text-align="right">fil....... de <b t-field="doc.pere.nom"/> <b t-field="doc.pere.prenom"/></td>
+            </tr>
+            <tr>
+              <td text-align="left"><b t-field="doc.nom"/> <b t-fiel="doc.prenom"/> </td>
+              <td text-align="right">et de <b t-field="doc.mere.nom"/> <b t-field="doc.mere.prenom"/></td>
+            </tr>
+            <tr>
+              <td border-bottom="1px">................................................................................................................</td>
+            </tr>
+          </table>
+
+          <table width="100%" text-align="center">
+            <tr>
+              <td border-top="1px" text-align="left">Mention (éventuellement):</td>
+            </tr>
+            <tr>
+              <td text-align="left">Marié(e) le ............................................................................................... à ..........................................................................................................</td>
+            </tr>
+            <tr>
+              <td text-align="left">Avec ......................................................................................................................................................................................................................</td>
+            </tr>
+            <tr>
+              <td text-align="left">Mariage dissous par décision de divorce en date du .........................................................................................................................................................................</td>
+            </tr>
+            <tr>
+              <td text-align="left">décédé(e) le .............................................................................................................................................................................................................</td>
+            </tr>
+            <tr>
+              <td>...............................................................................................................................................................................................................................................</td>
+            </tr>
+            <tr>
+              <td>Certifié le présent extrait conforme aux indications portés au registre.</td>
+            </tr>
+            <tr>
+              <td text-align="right">Délivré à <b t-field="doc.ville"/> le .................................. </td>
+            </tr>
+          </table>
+
+        </div>
+      </t>
+    </t>
+  </template>
+</odoo>
