@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mod_pere,access.mod.pere,model_mod_pere,base.group_user,1,1,1,0
+access_mod_mere,access.mod.mere,model_mod_mere,base.group_user,1,1,1,0
+access_mod_extrait,access.mod.extrait,model_mod_extrait,base.group_user,1,1,1,0
