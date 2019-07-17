@@ -1,0 +1,140 @@
+<odoo>
+    <report
+        id="report_session"
+        model="mod.extrait"
+        string="Extrait PDF"
+        name="Extrait.mod_extrait_view_form"
+        file="report_session_view"
+        report_type="qweb-pdf" />
+
+    <template id="mod_extrait_view_form">
+        <t t-call="web.html_container">
+            <div class="header" style="width:100%;">
+<!--                 <nav style="margin-top:100px;">
+                    <img src="/Extrait/static/description/icon.png" style="width:120px; heigth:120px;"/> <h3 style="margin-left:700px; margin-top:-100px;">Extrait</h3>
+                    <h3 style="margin-left:700px; margin-top:-100px;">Annee</h3>
+                </nav> -->
+                <br/><br/>
+                <div class="table1" style="width:33%;">
+                <table>
+                    <tr>
+                        <p style="text-align: center;">REPUBLIQUE DE COTE D'IVOIRE</p>
+                        <p style="text-align: center;">Union-Discipline-Travail</p>
+                        <p style="text-align: center;">SOUS-PREFECTURE DE DALOA</p>
+                        <p style="text-align: center;">......................</p>
+                        <p style="text-align: center;">ETAT CIVIL</p>
+                        <p style="text-align: center;">............</p>
+                    </tr>
+                </table>
+            </div>
+                            <div class="table2" style="width:33%; margin-left:325px; margin-top:-97px;">
+                <table>
+                    <tr>
+                        <img src="C:\Users\DONCZA\Desktop\Extrait\static\description\icon.png" style="width:100px; heigth:100px; margin-top:-200px; margin-left:50px;"/>
+                    </tr>
+                </table>
+            </div>
+                            <div class="table3" style="width:33%; margin-left:646px; margin-top:-160px;">
+                <table>
+                    <tr>
+                        <p style="text-align: center;">EXTRAIT</p>
+                        <p style="text-align: center;">du registre d'acte de naissance de l'etat civil</p>
+                        <p style="text-align: center;">pour l'annee......</p>
+                    </tr>
+                </table>
+            </div>
+            </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <t t-foreach="docs" t-as="doc">
+                    <div class="page" style="width:100%;">
+                        <div class="table4" style="width:47%;">
+                        <p style="text-align: center; margin-left: -150px;">CENTRE DE DALOA</p>
+                        <p style="text-align: center; margin-left: -150px;">N 1.830 DU 25/08/1998</p>
+                        <p style="text-align: center; margin-left: -150px;">du registre</p>
+                        <p style="text-align: center; margin-left: -150px;">NAISSANCE DE:</p>
+                        <p style="text-align: center; margin-left: -150px;"><b t-field="doc.n"/> <b t-field="doc.p"/></p>
+                        <p style="text-align: center; margin-left: -150px;">.............................................</p>
+                        <p style="text-align: center; margin-left: -150px;">.............................................</p>
+                        <p style="text-align: center; margin-left: -150px;">.............................................</p>
+                    </div>
+                    <div class="table5" style="width:47%; margin-left:630px; margin-top:-220px;">
+                        <p>Le <b t-field="doc.dn"/></p>
+                        <p>est ne <b t-field="doc.n"/> <b t-field="doc.p"/></p>
+                        <p>A <b t-field="doc.ville_n"/></p>
+                        <p>fils de <b t-field="doc.pere.nom"/> <b t-field="doc.pere.prenom"/> et de <b t-field="doc.mere.nom"/> <b t-field="doc.mere.prenom"/></p>
+                    </div>
+                    </div><br/><br/>
+                    <div class="table6" style="width:100%; border-top:1px solid #000; margin-top:50px;">
+                        <br/><br/>
+                        <h1 style="text-align:center;">MENTION(eventuellement)</h1>
+                        <p>Marie le .........a............</p>
+                        <p>Avec ..........................</p>
+                        <p>Mariage dissout par decision de divorce en date du ...........</p>
+                        <p>decede le ..................................</p>
+                        <p>............................................</p>
+                        <p>Certifie le present extrait conforme aux indications du ragistre</p>
+                        <p style="float:right">Delivre a DALOA le .............</p>
+                    </div>
+                </t>
+ <!--                                <div class="table1" style="width:33%; ">
+                <table>
+                    <tr>
+                        <p style="text-align: center;">REPUBLIQUE DE COTE D'IVOIRE</p>
+                        <p style="text-align: center;">Union-Discipline-Travail</p>
+                        <p style="text-align: center;">SOUS-PREFECTURE DE DALOA</p>
+                        <p style="text-align: center;">......................</p>
+                        <p style="text-align: center;">ETAT CIVIL</p>
+                        <p style="text-align: center;">............</p>
+                    </tr>
+                </table>
+            </div>
+                            <div class="table2" style="width:33%; margin-left:445px; margin-top:-97px;">
+                <table>
+                    <tr>
+
+                    </tr>
+                </table>
+            </div>
+                            <div class="table3" style="width:33%; margin-left:890px; margin-top:-160px;">
+                <table>
+                    <tr>
+                        <p style="text-align: center;">EXTRAIT</p>
+                        <p style="text-align: center;">du registre d'acte de naissance de l'etat civil</p>
+                        <p style="text-align: center;">pour l'annee......</p>
+                    </tr>
+                </table>
+            </div>
+            </div><br/><br/><br/><br/><br/><br/><br/>
+            <t t-foreach="docs" t-as="doc">
+                    <div class="page" style="width:100%; border-bottom:1px solid #000;">
+                        <div class="table4" style="width:47%;">
+                        <p style="text-align: center; margin-left: -150px;">CENTRE DE DALOA</p>
+                        <p style="text-align: center; margin-left: -150px;">N 1.830 DU 25/08/1998</p>
+                        <p style="text-align: center; margin-left: -150px;">du registre</p>
+                        <p style="text-align: center; margin-left: -150px;">NAISSANCE DE:</p>
+                        <p style="text-align: center; margin-left: -150px;">.............................................</p>
+                        <p style="text-align: center; margin-left: -150px;">.............................................</p>
+                        <p style="text-align: center; margin-left: -150px;">.............................................</p>
+                    </div>
+                    <div class="table5" style="width:47%; background-color:red; margin-left:630px; margin-top:-203px;">
+                        <p>jfdjd dfjfj fnmfj</p>
+                        <p>jfdjd dfjfj fnmfj</p>
+                        <p>jfdjd dfjfj fnmfj</p>
+                        <p>jfdjd dfjfj fnmfj</p>
+                        <p>jfdjd dfjfj fnmfj</p>
+                        <p>jfdjd dfjfj fnmfj</p>
+                    </div>
+                    </div>
+                    <div class="table6" style="width:100%; border-top:1px solid #000;">
+                        <br/><br/>
+                        <h1 style="text-align:center;">MENTION(eventuellement)</h1>
+                        <p>Marie le .........a............</p>
+                        <p>Avec ..........................</p>
+                        <p>Mariage dissout par decision de divorce en date du ...........</p>
+                        <p>decede le ..................................</p>
+                        <p>............................................</p>
+                        <p>Certifie le present extrait conforme aux indications du ragistre</p>
+                        <p style="float:right">Delivre a DALOA le .............</p>
+                    </div> -->
+        </t>
+    </template>
+</odoo>
