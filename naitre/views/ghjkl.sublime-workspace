@@ -1,0 +1,426 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mere",
+				"mere"
+			],
+			[
+				"mu",
+				"Multi"
+			],
+			[
+				"pad",
+				"padding-bottom\tproperty"
+			],
+			[
+				"pr",
+				"prix"
+			],
+			[
+				"s",
+				"span"
+			],
+			[
+				"va",
+				"valeur"
+			],
+			[
+				"ve",
+				"vehicules"
+			],
+			[
+				"v",
+				"vehicules"
+			],
+			[
+				"veh",
+				"vehicule"
+			],
+			[
+				"pri",
+				"prix2"
+			],
+			[
+				"no",
+				"nom_voiture"
+			],
+			[
+				"post",
+				"post-link"
+			],
+			[
+				"nom",
+				"nom2"
+			],
+			[
+				"re",
+				"replace"
+			],
+			[
+				"m",
+				"max"
+			],
+			[
+				"ma",
+				"marque"
+			],
+			[
+				"p",
+				"print"
+			],
+			[
+				"vo",
+				"voprix"
+			],
+			[
+				"i",
+				"input"
+			],
+			[
+				"cl",
+				"class_"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"e",
+				"element"
+			],
+			[
+				"y",
+				"Y"
+			],
+			[
+				"d",
+				"db"
+			],
+			[
+				"l",
+				"login"
+			],
+			[
+				"u",
+				"url_for"
+			],
+			[
+				"lo",
+				"logout"
+			],
+			[
+				"f",
+				"form"
+			],
+			[
+				"__",
+				"__name__"
+			],
+			[
+				"a",
+				"a-3"
+			],
+			[
+				"val",
+				"val1"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 171.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/mimi coul/Desktop/naitre",
+		"/C/Users/mimi coul/Desktop/naitre/.vscode",
+		"/C/Users/mimi coul/Desktop/naitre/controllers",
+		"/C/Users/mimi coul/Desktop/naitre/demo",
+		"/C/Users/mimi coul/Desktop/naitre/models",
+		"/C/Users/mimi coul/Desktop/naitre/security",
+		"/C/Users/mimi coul/Desktop/naitre/views"
+	],
+	"file_history":
+	[
+		"/C/Users/mimi coul/Desktop/naitre/views/extrait_pdf.xml",
+		"/C/Users/mimi coul/Desktop/naitre/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/naitre/security/ir.model.access.csv",
+		"/C/Users/mimi coul/Desktop/naitre/models/models.py",
+		"/C/Users/mimi coul/Desktop/Naissance/views/extrait_pdf.xml",
+		"/C/Users/mimi coul/Desktop/Naissance/views/vue_pere.xml",
+		"/C/Users/mimi coul/Desktop/acte de naissance/views/vue.xml",
+		"/C/Users/mimi coul/Desktop/acte de naissance/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/Naissance/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/Extrait de naissance/security/ir.model.access.csv",
+		"/C/Users/mimi coul/Desktop/Extrait de naissance/views/vue_pere.xml",
+		"/C/Users/mimi coul/Desktop/Extrait de naissance/.vscode/settings.json",
+		"/C/Users/mimi coul/Desktop/Extrait de naissance/controllers/__init__.py",
+		"/C/Users/mimi coul/Desktop/Extrait de naissance/controllers/controllers.py",
+		"/C/Users/mimi coul/Desktop/Extrait de naissance/demo/demo.xml",
+		"/C/Users/mimi coul/Desktop/Extrait de naissance/models/__init__.py",
+		"/C/Users/mimi coul/Desktop/Extrait de naissance/models/models.py",
+		"/C/Users/mimi coul/Desktop/Extrait de naissance/views/extrait_pdf.xml",
+		"/C/Users/mimi coul/Desktop/Extrait de naissance/views/templates.xml",
+		"/C/Users/mimi coul/Desktop/Extrait de naissance/views/views.xml",
+		"/C/Users/mimi coul/Desktop/Extrait de naissance/__init__.py",
+		"/C/Users/mimi coul/Desktop/Extrait de naissance/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/extrait/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/extrait/views/vue.xml",
+		"/C/Users/mimi coul/Desktop/extrait/security/ir.model.access.csv",
+		"/C/Users/mimi coul/Desktop/dossier/DIEU/test.py",
+		"/C/Users/mimi coul/Desktop/extrait/models/fami.py",
+		"/C/Users/mimi coul/Desktop/dossier/DIEU/views.xml",
+		"/C/Users/mimi coul/Desktop/dossier/Exo 3/moi.py",
+		"/C/Users/mimi coul/Desktop/dossier/Exo 3/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/dossier/DIEU/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/exister/views/vue.xml",
+		"/C/Users/mimi coul/Desktop/exister/models/fami.py",
+		"/C/Users/mimi coul/Desktop/Parent/views/views.xml",
+		"/C/Users/mimi coul/Desktop/family/vue.xml",
+		"/C/Users/mimi coul/Desktop/family/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/family/models/pere.py",
+		"/C/Users/mimi coul/Desktop/exister/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/exister/security/ir.model.access.csv",
+		"/C/Users/mimi coul/Desktop/exister/__init__.py",
+		"/C/Users/mimi coul/Desktop/exister/models/__init__.py",
+		"/C/Users/mimi coul/Desktop/family/views/views.xml",
+		"/C/Users/mimi coul/Desktop/Parent/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/Parent/__init__.py",
+		"/C/Users/mimi coul/Desktop/Parent/security/ir.model.access.csv",
+		"/C/Users/mimi coul/Desktop/family/security/ir.model.access.csv",
+		"/C/Program Files (x86)/Odoo 12.0/server/odoo/addons/__init__.py",
+		"/C/Users/mimi coul/Desktop/family/__init__.py",
+		"/C/Users/mimi coul/Desktop/family/models/__init__.py",
+		"/C/Users/mimi coul/Desktop/vue.xml",
+		"/C/Users/mimi coul/Desktop/NOTRE MODULE/_init__.py",
+		"/C/Users/mimi coul/Desktop/NOTRE MODULE/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/NOTRE MODULE/securite/ir.model.access.csv",
+		"/C/Users/mimi coul/Desktop/NOTRE MODULE/views/views.xml",
+		"/C/Users/mimi coul/Desktop/NOTRE MODULE/models/exo.py",
+		"/C/Users/mimi coul/Desktop/NOTRE MODULE/models/_init__.py",
+		"/C/Users/mimi coul/Desktop/NOTRE MODULE/statics/description/icon.png",
+		"/C/Users/mimi coul/Desktop/XOS/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/XOS/test.py",
+		"/C/Users/mimi coul/Desktop/Enfin/test.py",
+		"/C/Users/mimi coul/Desktop/OOORR/model/exo.py",
+		"/C/Users/mimi coul/Desktop/OOORR/views/views.xml",
+		"/C/Users/mimi coul/Desktop/OOORR/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/EXTRAIT/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/MODEL ENTIER/model/exo.py",
+		"/C/Users/mimi coul/Desktop/MODEL ENTIER/views/views.xml",
+		"/C/Users/mimi coul/Desktop/MODEL ENTIER/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/oi.py",
+		"/C/Users/mimi coul/Desktop/employe",
+		"/C/Users/mimi coul/Desktop/MODEL ENTIER/model/__init__.py",
+		"/C/Users/mimi coul/Desktop/model/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/model/views/views.xml",
+		"/C/Users/mimi coul/Desktop/MODULE ENTIER/models/__init__.py",
+		"/C/Users/mimi coul/Desktop/MODULE ENTIER/_init__.py",
+		"/C/Users/mimi coul/Desktop/MODULE ENTIER/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/MODULE ENTIER/models/moi.py",
+		"/C/Users/mimi coul/Desktop/MODULE ENTIER/security/ir.model.access.csv",
+		"/C/Users/mimi coul/Desktop/MODULE ENTIER/views/views.xml",
+		"/C/Users/mimi coul/Desktop/doc/moi.py",
+		"/C/Users/mimi coul/Desktop/doc/views.xml",
+		"/C/Users/mimi coul/Desktop/doc/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/mon_travail/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/Travail/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/ami/test.py",
+		"/C/Users/mimi coul/Desktop/ami/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/fait/moi.py",
+		"/C/Users/mimi coul/Desktop/Travail/views.xml",
+		"/C/Users/mimi coul/Desktop/Travail/moi.py",
+		"/C/Users/mimi coul/Desktop/Exo  11/views.xml",
+		"/C/Users/mimi coul/Desktop/Exo  11/moi.py",
+		"/C/Users/mimi coul/Desktop/Exo  11/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/Mon_Exo/moi.py",
+		"/C/Users/mimi coul/Desktop/Exo  12/views.xml",
+		"/C/Users/mimi coul/Desktop/Exo  12/moi.py",
+		"/C/Users/mimi coul/Desktop/Exo  12/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/EEEH_DIEU/vue.xml",
+		"/C/Users/mimi coul/Desktop/EEEH_DIEU/merde.py",
+		"/C/Users/mimi coul/Desktop/Mon_Exo/views.xml",
+		"/C/Users/mimi coul/Desktop/Exo6/moi.py",
+		"/C/Users/mimi coul/Desktop/Exo6/views.xml",
+		"/C/Users/mimi coul/Desktop/Exo6/__init__.py",
+		"/C/Users/mimi coul/Desktop/Exo6/__manifest__.py",
+		"/D/yliassss/views.xml",
+		"/D/yliassss/__manifest__.py",
+		"/D/yliassss/__init__.py",
+		"/D/yliassss/moi.py",
+		"/D/yliassss/test.py",
+		"/C/Users/mimi coul/Desktop/Exo5/moi.py",
+		"/C/Users/mimi coul/Desktop/Exo5/views.xml",
+		"/C/Users/mimi coul/Desktop/Exo 3/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/Exo 3/moi.py",
+		"/C/Users/mimi coul/Desktop/Exo5/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/Exo5/__init__.py",
+		"/C/Users/mimi coul/Desktop/Exo 3/view.xml",
+		"/C/Users/mimi coul/Desktop/Exo 2/view.xml",
+		"/C/Users/mimi coul/Desktop/Exo 2/moi.py",
+		"/C/Users/mimi coul/Desktop/Exo 2/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/EEEH_DIEU 3/__init__.py",
+		"/C/Users/mimi coul/Desktop/XOS/views.xml",
+		"/C/Users/mimi coul/Desktop/Exo/moi.py",
+		"/C/Users/mimi coul/Desktop/Exo/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/XOS/__init__.py",
+		"/C/Users/mimi coul/Desktop/EEEH_DIEU 3/vue.xml",
+		"/C/Users/mimi coul/Desktop/EEEH_DIEU 3/__manifest__.py",
+		"/C/Users/mimi coul/Desktop/EEEH_DIEU 3/merde.py",
+		"/C/Users/mimi coul/Desktop/EEEH_DIEU 5/merde.py",
+		"/C/Users/mimi coul/Desktop/EEEH_DIEU 8/__init__.py",
+		"/C/Users/mimi coul/Desktop/EEEH_DIEU 8/__manifest__.py"
+	],
+	"find":
+	{
+		"height": 50.0
+	},
+	"find_in_files":
+	{
+		"height": 142.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 50.0
+	},
+	"input":
+	{
+		"height": 50.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 132.0
+	},
+	"pinned_build_system": "",
+	"project": "ghjkl.sublime-project",
+	"replace":
+	{
+		"height": 96.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 250.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
