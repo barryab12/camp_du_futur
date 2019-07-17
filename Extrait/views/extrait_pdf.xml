@@ -1,0 +1,134 @@
+<odoo>
+    <!-- <record id="format_extrait" model="report.paperformat">
+		<field name="name">Extrait format PDF</field>
+		<field name="default" eval="True"/>
+		<field name="format">A4</field>
+		<field name="orientation">Portrait</field>
+		<field name="margin_top">10</field>
+		<field name="margin_bottom">10</field>
+		<field name="margin_left">10</field>
+		<field name="margin_right">10</field>
+		<field name="header_line" eval="False"/>
+		<field name="header_spacing">3</field>
+		<field name="dpi">90</field>
+	</record> -->
+    
+    <report
+        id="report_session"
+        model="mod.extrait"
+        string="Extrait PDF"
+        name="Extrait.mod_extrait_template"
+        file="report_session_view"
+        report_type="qweb-pdf" />
+
+    <template id="mod_extrait_template">
+        <t t-call="web.html_container">
+            <!-- <div class="header">                
+                <div>
+                    <img src="/Extrait/static/description/icon.png" style="width: 100px; heigth: 120px;"/>
+                </div>
+                <h2 style="margin-left: 700px; margin_top: -100px; background-color: blue;">EXTRAIT</h2>
+            </div> -->
+            <t t-foreach="docs" t-as="doc">
+                <div class="page">
+                    <div>
+                        <table style="width: 100%; text-align: center">
+                            <tr >
+                                <td>REPUBLIQUE DE CÔTE D'IVOIRE</td>
+                                <td rowspan="6"><img t-att-src="data:image/jpeg;base24,/static/src/img/icon.jpeg" style="width: 100px; heigth: 120px;"/></td>
+                                <td>EXTRAIT</td>
+                            </tr>
+                            <tr>
+                                <td>Union - Discipline - Travail</td>
+                                
+                                <td>du registre des actes de l'Etat Civil</td>
+                            </tr>
+                            <tr>
+                                <td>SOUS-PREFECTURE DE DALOA</td>
+                                <td>pour l'année..........</td>
+                            </tr>
+                            <tr>
+                                <td>...........</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ETAT CIVIL</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>...........</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table><br/><br/><br/>
+                        <table style="width: 100%; text-align: left; border-bottom: 1px solid black; padding: 2px">
+                            <tr style="width: 100%">
+                                <td style="width:45%; text-align: center">CENTRE DE DALOA</td>
+                                <td style="padding-left: 20%">Le <b t-field="doc.dn"/></td>
+                            </tr>
+                            <tr style="width: 100%;">
+                                <td style="width:45%;  text-align: center">N°1.830 du 25/08/1998</td>
+                                <td style="padding-left: 20%">est né(e) <b t-field="doc.n"/> <b t-field="doc.p"/></td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width:45%; text-align: center">du registre</td>
+                                <td style="padding-left: 20%">à <b t-field="doc.ville_n"/></td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td rowspan="2" style="width:45%; text-align: center">NAISSANCE DE :</td>
+                                <td style="padding-left: 20%">fil(le) de <b t-field="doc.pere.nom"/> <b t-field="doc.pere.prenom"/></td>
+                            </tr>
+                            <tr style="width: 100%">
+                                
+                                <td style="padding-left: 20%">et de <b t-field="doc.mere.nom"/> <b t-field="doc.mere.prenom"/></td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width:45%; text-align: center"><b t-field="doc.n"/> <b t-field="doc.p"/></td>                               
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width:45%; text-align: center">.....................................................................</td>
+                                <td></td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width:45%; text-align: center">.....................................................................</td>
+                                <td></td>
+                            </tr>
+                            <tr style="width: 100%">
+                                <td style="width:45%; text-align: center">.....................................................................<br/><br/></td>
+                                <td></td>
+                            </tr>
+                        </table><br/>
+                        <table style="width: 100%; text-align: left; border-top: 1px solid black">
+                            <tr>
+                                <td style="width: 100%; text-align: center"><br/>MENTION (éventuellement)</td>
+                            </tr>
+                            <tr>
+                                <td>Marié(e) le ........................à.............................</td>
+                            </tr>
+                            <tr>
+                                <td>Avec.....................................................................</td>
+                            </tr>
+                            <tr>
+                                <td>mariage dissousn par décision de divorce en date du.......................</td>
+                            </tr>
+                            <tr>
+                                <td>décédé(e) le.................................................................</td>
+                            </tr>
+                            <tr>
+                                <td>...................................................................................</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 100%; text-align: center">Certifié le présent extrait conforme aux indications portées au registre.</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 100%; text-align: right"><br/><br/>  Délivré à DALOA le ................</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
