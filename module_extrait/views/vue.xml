@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="pere_menu_action" model="ir.actions.act_window">
+    <field name="name">Père</field>
+    <field name="res_model">mod.pere</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Enregistrer les informations du père</p>
+    </field>
+  </record>
+  <menuitem id="menu" name="Extrait d'acte de naissance"/>
+  <menuitem id="pere_menu" name="Père" parent="menu" action="pere_menu_action"/>
+
+  <record id="mere_menu_action" model="ir.actions.act_window">
+    <field name="name">Mère</field>
+    <field name="res_model">mod.mere</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Enregistrer les informations de la mère</p>
+    </field>
+  </record>
+
+  <menuitem id="menu" name="Extrait d'acte de naissance"/>
+  <menuitem id="mere_menu" name="Mère" parent="menu" action="mere_menu_action"/>
+
+  <record id="extrait_menu_action" model="ir.actions.act_window">
+    <field name="name">Extrait</field>
+    <field name="res_model">mod.extrait</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Extrait d'acte de naissance</p>
+    </field>
+  </record>
+
+  <menuitem id="menu" name="Extrait d'acte de naissance"/>
+  <menuitem id="extrait_menu" name="Extrait" parent="menu" action="extrait_menu_action"/>
+
+<!-- tree view -->
+  <record id="pere_tree" model="ir.ui.view">
+    <field name="name">Père</field>
+    <field name="model">mod.pere</field>
+    <field name="arch" type="xml">
+      <tree string="Père">
+        <field name="matri"/>
+        <field name="nom" />
+        <field name="prenom" />
+        <field name="profession" />
+        <field name='date'/>
+        <field name ='ville'/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="mere_tree" model="ir.ui.view">
+    <field name="name">Mère</field>
+    <field name="model">mod.mere</field>
+    <field name="arch" type="xml">
+      <tree string="Mère">
+        <field name="matri"/>
+        <field name="nom" />
+        <field name="prenom" />
+        <field name="profession" />
+        <field name='date'/>
+        <field name ='ville'/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="extrait_tree" model="ir.ui.view">
+    <field name="name">Extrait</field>
+    <field name="model">mod.extrait</field>
+    <field name="arch" type="xml">
+      <tree string="Extrait">
+        <field name="matri"/>
+        <field name="noms" />
+        <field name="date" />
+        <field name ='lieu'/>
+        <field name="centre" />
+        <field name ='genre'/>
+        <field name='heure' />
+        <field name ='pere'/>
+        <field name ='mere' />
+        <field name ='fait'/>
+        
+      </tree>
+    </field>
+  </record>
+
+<!-- form view -->
+  <record id="pere_view" model="ir.ui.view">
+    <field name="name">pere.form</field>
+    <field name="model">mod.pere</field>
+    <field eval="1" name="priority"/>
+    <field name="arch" type="xml">
+      <form string="Père">
+        <sheet>
+          <field name="photo" widget="image" string="Image" class="oe_avatar" />
+          <div class="oe_title">
+            <h1><field name="nom" placeholder="Nom" /></h1>
+            <h2><field name="prenom" placeholder="Prénoms" /></h2>
+            <group>
+              <field name='date'/>
+              <field name ='ville'/>
+            </group>
+            <group>
+              <field name='profession'/>
+            </group>
+            <group>
+              <field name='matri'/>
+            </group>
+          </div>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="mere_view" model="ir.ui.view">
+    <field name="name">mere.form</field>
+    <field name="model">mod.mere</field>
+    <field eval="1" name="priority"/>
+    <field name="arch" type="xml">
+      <form string="Mère">
+        <sheet>
+          <field name="photo" widget="image" string="Image" class="oe_avatar" />
+          <div class="oe_title">
+            <h1><field name="nom" placeholder="Nom" /></h1>
+            <h2><field name="prenom" placeholder="Prénoms" /></h2>
+            <group>
+              <field name='date'/>
+              <field name ='ville'/>
+            </group>
+            <group>
+              <field name='profession'/>
+            </group>
+            <group>
+              <field name='matri'/>
+            </group>
+          </div>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="extrait_view" model="ir.ui.view">
+    <field name="name">extrait.form</field>
+    <field name="model">mod.extrait</field>
+    <field eval="1" name="priority"/>
+    <field name="arch" type="xml">
+      <form string="Extrait">
+        <sheet>
+          
+          <div class="oe_title">
+            
+            <group>
+              <field name="centre" placeholder="Ex. ABIDJAN" />
+            </group>
+
+            <group>
+              <field name="date" placeholder="Ex. NEUF JANVIER MILLE NEUF CENTS QUATRE VINGTS DIX" />
+              <field name='heure' placeholder="Ex. DIX HEURES DIX MINUTES" />
+            </group>
+
+            <group>
+              <field name="noms" placeholder="Nom et prénoms" />
+              <field name ='genre' />
+              <field name ='lieu' placeholder="Ex. YOPOUGON" />
+            </group>
+
+            <group>
+              <field name ='pere' placeholder="Nom complet du père" />
+              <field name ='mere' placeholder="Nom complet de la mère" />
+            </group>
+
+            <group>
+              <field name ='matri' />
+            </group>
+            
+            <group>
+              <field name ='fait' />
+            </group>
+
+            
+
+          </div>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+</odoo>
