@@ -1,16 +1,11 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Extrait d'acte de naissance",
-    'version': '1.5.1',
-    'summary': """Renseigner les informations sur les parents.""",
+    'version': '2.3.1',
+    'summary': """Créer un extrait d'acte de naissance format PDF""",
     'description': """
-        Ce module permet d'enregistrer les infos suivantes:
-        - Nom
-        - Prénoms
-        - Date de naissance
-        - Ville de naissance
-        - Profession
-        - Photo
+        Ce module permet de créer et gérer la confection d'acte
+        de naissance.
     """,
     'author': "Kevin Pierre",
     'maintainer': "Kevin Pierre",

@@ -4,7 +4,7 @@
 		id="report_session"
 		model="mod.extrait"
 		string="Extrait PDF"
-		name="famille.mod_extrait_template"
+		name="extrait.mod_extrait_template"
 		file="report_session_view"
 		report_type="qweb-pdf"
 		/>
@@ -17,7 +17,7 @@
                         <table style="width: 100%; text-align: center">
                             <tr >
                                 <td>REPUBLIQUE DE CÔTE D'IVOIRE</td>
-                                <td rowspan="6"><img src="C:\Users\Kev\Desktop\Stage\famille\static/ci.png" alt="L'armoirie de la Côte d'Ivoire" style="width: 100px;height: 120px;" /></td>
+                                <td rowspan="6"><img src="C:\Users\Kev\Desktop\Stage\extrait\static/ci.png" alt="L'armoirie de la Côte d'Ivoire" style="width: 100px;height: 120px;" /></td>
                                 <td>E X T R A I T</td>
                             </tr>
                             <tr>
@@ -64,7 +64,7 @@
                             </tr>
                             <tr style="width: 100%">
                                 <td rowspan="2" style="width:45%; text-align: center">NAISSANCE DE :</td>
-                                <td style="padding-left: 20%">fils(le) de <b t-field="doc.pere.nom"/> <b t-field="doc.pere.prenom"/></td>
+                                <td style="padding-left: 20%"> <b t-field="doc.genre"/> de <b t-field="doc.pere.nom"/> <b t-field="doc.pere.prenom"/></td>
                             </tr>
                             <tr style="width: 100%">
                                 
@@ -91,16 +91,16 @@
                                 <td style="width: 100%; text-align: center"><br/>MENTION (éventuellement)</td>
                             </tr>
                             <tr>
-                                <td>Marié(e) le ........................à.............................</td>
+                                <td>Marié(e) le .............................................................................à..................................</td>
                             </tr>
                             <tr>
-                                <td>Avec.....................................................................</td>
+                                <td>Avec.........................................................................................................................</td>
                             </tr>
                             <tr>
-                                <td>mariage dissous par décision de divorce en date du.......................</td>
+                                <td>mariage dissous par décision de divorce en date du..................................................................................</td>
                             </tr>
                             <tr>
-                                <td>décédé(e) le.................................................................</td>
+                                <td>décédé(e) le..................................................................................</td>
                             </tr>
                             <tr>
                                 <td>...................................................................................</td>
