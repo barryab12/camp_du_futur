@@ -53,6 +53,7 @@
         <field name="profession" />
         <field name='date'/>
         <field name ='ville'/>
+        <field name ='matricule'/>
       </tree>
     </field>
   </record>
@@ -67,6 +68,7 @@
         <field name="profession" />
         <field name='date'/>
         <field name ='ville'/>
+        <field name ='matricule'/>
       </tree>
     </field>
   </record>
@@ -85,6 +87,7 @@
         <field name='nom_de_la_mere'/>
         <field name='numero_de_l_extrait'/>
         <field name='heure'/>
+        <field name ='matricule'/>
       </tree>
     </field>
   </record>
@@ -105,6 +108,7 @@
             <group>
               <field name='date'/>
               <field name ='ville'/>
+              <field name ='matricule'/>
             </group>
             <group>
               <field name='profession'/>
@@ -129,6 +133,7 @@
             <group>
               <field name='date'/>
               <field name ='ville'/>
+              <field name ='matricule'/>
             </group>
             <group>
               <field name='profession' placeholder="Profession"/>
@@ -157,6 +162,7 @@
               <field name ='nom_du_pere'/>
               <field name='nom_de_la_mere'/>
               <field name='heure'/>
+              <field name ='matricule'/>
             </group>
             <group>
                <field name='numero_de_l_extrait'/>
@@ -267,13 +273,13 @@
                       <td style="width: 100%; text-align: center"><br/>MENTION (éventuellement)</td>
                     </tr>
                     <tr>
-                      <td>Marié(e) le ........................à.............................</td>
+                      <td>Marié(e) le ..................................à..................................</td>
                     </tr>
                     <tr>
                       <td>Avec.....................................................................</td>
                     </tr>
                     <tr>
-                      <td>mariage dissousn par décision de divorce en date du.......................</td>
+                      <td>mariage dissous par décision de divorce en date du..............................................................................</td>
                     </tr>
                     <tr>
                       <td>décédé(e) le.................................................................</td>

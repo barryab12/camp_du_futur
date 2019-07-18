@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import models, fields,api
+from random import *
 
 class PerePere(models.Model):
 	_name = 'pere.pere'
@@ -11,6 +12,26 @@ class PerePere(models.Model):
 	ville = fields.Char(string='Ville de naissance')
 	profession = fields.Char(string='Profession')
 	photo = fields.Binary(string='photo')
+	matricule = fields.Char(string='Matricule', compute='_mati', readonly=True, store=True)
+
+	@api.depends('nom')
+	def _mati(self):
+		for rec in self:
+			lee = rec.nom[:3]
+			s = ''
+			while len(s) < 5:
+				mit = randint(0,9)
+				s += str(mit)
+			rec.matricule = lee.upper() + s
+
+
+	@api.multi
+	def name_get(self):
+		result = []
+		for perepere in self:
+			name = perepere.nom + ' ' + perepere.prenom
+			result.append((perepere.id, name))
+		return result
 
 
 class MereMere(models.Model):
@@ -22,6 +43,26 @@ class MereMere(models.Model):
 	ville = fields.Char(string='Ville de naissance')
 	profession = fields.Char(string='Profession')
 	photo = fields.Binary(string='photo')
+	matricule = fields.Char(string='Matricule', compute='_mati', readonly=True, store=True)
+
+	@api.depends('nom')
+	def _mati(self):
+		for rec in self:
+			lee = rec.nom[:3]
+			s = ''
+			while len(s) < 5:
+				mit = randint(0,9)
+				s += str(mit)
+			rec.matricule = lee.upper() + s
+
+
+	@api.multi
+	def name_get(self):
+		result = []
+		for meremere in self:
+			name = meremere.nom + ' ' + meremere.prenom
+			result.append((meremere.id, name))
+		return result
 
 
 
@@ -36,4 +77,15 @@ class ExtraitExtrait(models.Model):
 	nom_de_la_mere= fields.Many2one(comodel_name="mere.mere", string='nom_de_la_mere', required=True)
 	numero_de_l_extrait = fields.Char(string='numero_de_l_extrait')
 	heure = fields.Char(string='Heure', required=True)
+	matricule = fields.Char(string='Matricule', compute='_mati', readonly=True, store=True)
+
+	@api.depends('nom')
+	def _mati(self):
+		for rec in self:
+			lee = rec.nom[:3]
+			s = ''
+			while len(s) < 5:
+				mit = randint(0,9)
+				s += str(mit)
+			rec.matricule = lee.upper() + s
 
