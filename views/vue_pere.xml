@@ -1,0 +1,223 @@
+<odoo>
+	<!-- mod.pere action window -->
+	<record id="mod_pere_action" model="ir.actions.act_window">
+		<field name="name">Père</field>
+		<field name="res_model">mod.pere</field>
+		<field name="view_mode">tree,form</field>
+		<field name="view_type">form</field>
+		<field name="help" type="html">
+			<p class="oe_view_nocontent_create">
+				<!-- Add Text Here -->
+			</p><p>
+				<!-- More details about what a user can do with this object will be OK --> 
+			</p>
+		</field>
+	</record>
+	
+
+	<!-- mod.mere action window -->
+	<record id="mod_mere_action" model="ir.actions.act_window">
+		<field name="name">Mère</field>
+		<field name="res_model">mod.mere</field>
+		<field name="view_mode">tree,form</field>
+		<field name="view_type">form</field>
+		<field name="help" type="html">
+			<p class="oe_view_nocontent_create">
+				<!-- Add Text Here -->
+			</p><p>
+				<!-- More details about what a user can do with this object will be OK --> 
+			</p>
+		</field>
+	</record>
+
+	<record id="mod_extrait_action" model="ir.actions.act_window">
+		<field name="name">Extrait</field>
+		<field name="res_model">mod.extrait</field>
+		<field name="view_mode">tree,form</field>
+		<field name="view_type">form</field>
+		<field name="help" type="html">
+			<p class="oe_view_nocontent_create">
+				<!-- Add Text Here -->
+			</p><p>
+				<!-- More details about what a user can do with this object will be OK --> 
+			</p>
+		</field>
+	</record> 
+
+
+
+
+	
+	<!-- mod.pere tree view -->
+	<record id="mod_pere_view_tree" model="ir.ui.view">
+		<field name="name">mod.pere.view.tree</field>
+		<field name="model">mod.pere</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="nom"/>
+				<field name="prenom"/>
+				<field name="dn"/>
+				<field name="ville_n"/>
+				<field name="prof"/>
+				<field name="matricule"/>
+			</tree>
+		</field>
+	</record>
+	
+	<record id="mod_mere_view_tree" model="ir.ui.view">
+		<field name="name">mod.mere.view.tree</field>
+		<field name="model">mod.mere</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="nom"/>
+				<field name="prenom"/>
+				<field name="dn"/>
+				<field name="ville_n"/>
+				<field name="prof"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="mod_extrait_view_tree" model="ir.ui.view">
+		<field name="name">mod.extrait.view.tree</field>
+		<field name="model">mod.extrait</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="n"/>
+				<field name="p"/>
+				<field name="dn"/>
+				<field name="ville_n"/>
+				<field name="pere"/>
+				<field name="mere"/>
+			</tree>
+		</field>
+	</record>
+
+
+
+	
+
+	<!-- mod.pere form view -->
+	<record id="mod_pere_view_form" model="ir.ui.view">
+		<field name="name">mod.pere.nom</field>
+		<field name="model">mod.pere</field>
+		<field name="arch" type="xml">
+			<form string="">
+				<sheet>						
+					<field name="photo" widget="image" class="oe_avatar"/>							
+					<div class="oe_title">
+						<h1><field name="nom" placeholder="Nom"/></h1>
+						<h2><field name="prenom" placeholder="Prénoms"/></h2>
+						<h4><field name="prof" placeholder="Profession"/></h4>
+						
+						<group>
+							<field name="dn"/>
+							<field name="ville_n"/>
+							<field name="matricule"/>
+							
+						</group>
+					</div>					
+				</sheet>							
+			</form>
+		</field>
+	</record>
+
+	<!-- mod.pere form view -->
+	<record id="mod_mere_view_form" model="ir.ui.view">
+		<field name="name">mod.mere.nom</field>
+		<field name="model">mod.mere</field>
+		<field name="arch" type="xml">
+			<form string="">
+				<sheet>						
+					<field name="photo" widget="image" class="oe_avatar"/>							
+					<div class="oe_title">
+						<h1><field name="nom" placeholder="Nom"/></h1>
+						<h2><field name="prenom" placeholder="Prénoms"/></h2>
+						<h4><field name="prof" placeholder="Proffession"/></h4>
+
+						<group>
+							<field name="dn"/>
+							<field name="ville_n"/>
+							<field name="matricule"/>
+							
+						</group>
+					</div>					
+				</sheet>							
+			</form>
+		</field>
+	</record>
+
+	<record id="mod_extrait_view_form" model="ir.ui.view">
+		<field name="name">mod.extrait.view.form</field>
+		<field name="model">mod.extrait</field>
+		<field name="arch" type="xml">
+			<form string="">
+				<sheet>											
+					<div class="oe_title">
+						<h1>Extrait</h1>
+						<h2><field name="n" placeholder="Nom"/></h2>
+						<h2><field name="p" placeholder="Prénoms"/></h2>
+						<group>
+							<field name="dn"/>
+							<field name="ville_n"/>
+							<field name="pere"/>
+							<field name="mere"/>
+							<field name="matricule"/>
+						</group>
+					</div>					
+				</sheet>							
+			</form>
+		</field>
+	</record>
+	
+	<!-- Rapport pdf xml -->
+
+	<!-- format de la page -->
+	<!-- <record id="format_extrait" model="report.paperformat">
+		<field name="name">Extrait format PDF</field>
+		<field name="default" eval="True"/>
+		<field name="format">custom</field>
+		<field name="page_height">297</field>
+		<field name="page_width">210</field>
+		<field name="orientation">Portrait</field>
+		<field name="margin_top">10</field>
+		<field name="margin_bottom">10</field>
+		<field name="margin_left">10</field>
+		<field name="margin_right">10</field>
+		<field name="header_line" eval="False"/>
+		<field name="header_spacing">3</field>
+		<field name="dpi">90</field>
+	</record>
+
+    
+	<report
+		id="vue_extrait_pdf"
+		model="mod.extrait"
+		string="Extrait"
+		report_type="qweb-pdf"
+		name="Extrait PDF"
+		file="Extrait PDF"
+		paperformat="format_extrait"
+	/>
+
+	
+
+    <template id="vue_extrait_pdf">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="o">
+				<t t-call="web.external_layout">
+					<div class="page">
+						<h1>Extrait</h1>
+						<p t-field="o.name">/></p>
+
+					</div>
+				</t>
+			</t>
+		</t>
+	</template> -->
+
+	<menuitem id="menu_extrait" name="Extrait de naissance"/>
+	<menuitem id="menu_extrait_pere" parent="menu_extrait" name="Père" action="mod_pere_action"/>
+	<menuitem id="menu_extrait_mere" parent="menu_extrait" name="Mère" action="mod_mere_action"/>
+	<menuitem id="menu_extrait_pdf" parent="menu_extrait" name="Extrait" action="mod_extrait_action"/>
+</odoo>
