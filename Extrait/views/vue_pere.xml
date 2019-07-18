@@ -50,7 +50,7 @@
 	
 	<!-- mod.pere tree view -->
 	<record id="mod_pere_view_tree" model="ir.ui.view">
-		<field name="name">mod.pere.view.tree</field>
+		<field name="name">mod.pere.tree</field>
 		<field name="model">mod.pere</field>
 		<field name="arch" type="xml">
 			<tree>
@@ -59,12 +59,13 @@
 				<field name="dn"/>
 				<field name="ville_n"/>
 				<field name="prof"/>
+				<field name="matricule"/>
 			</tree>
 		</field>
 	</record>
 	
 	<record id="mod_mere_view_tree" model="ir.ui.view">
-		<field name="name">mod.mere.view.tree</field>
+		<field name="name">mod.mere.tree</field>
 		<field name="model">mod.mere</field>
 		<field name="arch" type="xml">
 			<tree>
@@ -73,21 +74,23 @@
 				<field name="dn"/>
 				<field name="ville_n"/>
 				<field name="prof"/>
+				<field name="matricule"/>
 			</tree>
 		</field>
 	</record>
 
 	<record id="mod_extrait_view_tree" model="ir.ui.view">
-		<field name="name">mod.extrait.view.tree</field>
+		<field name="name">mod.extrait.tree</field>
 		<field name="model">mod.extrait</field>
 		<field name="arch" type="xml">
 			<tree>
-				<field name="n"/>
-				<field name="p"/>
+				<field name="nom"/>
+				<field name="prenom"/>
 				<field name="dn"/>
 				<field name="ville_n"/>
 				<field name="pere"/>
 				<field name="mere"/>
+				<field name="matricule"/>
 			</tree>
 		</field>
 	</record>
@@ -98,7 +101,7 @@
 
 	<!-- mod.pere form view -->
 	<record id="mod_pere_view_form" model="ir.ui.view">
-		<field name="name">mod.pere.nom</field>
+		<field name="name">mod.pere.form</field>
 		<field name="model">mod.pere</field>
 		<field name="arch" type="xml">
 			<form string="">
@@ -111,6 +114,7 @@
 						<group>
 							<field name="dn"/>
 							<field name="ville_n"/>
+							<field name="matricule"/>
 						</group>
 					</div>					
 				</sheet>							
@@ -120,7 +124,7 @@
 
 	<!-- mod.pere form view -->
 	<record id="mod_mere_view_form" model="ir.ui.view">
-		<field name="name">mod.mere.nom</field>
+		<field name="name">mod.mere.form</field>
 		<field name="model">mod.mere</field>
 		<field name="arch" type="xml">
 			<form string="">
@@ -133,6 +137,7 @@
 						<group>
 							<field name="dn"/>
 							<field name="ville_n"/>
+							<field name="matricule"/>
 						</group>
 					</div>					
 				</sheet>							
@@ -141,20 +146,21 @@
 	</record>
 
 	<record id="mod_extrait_view_form" model="ir.ui.view">
-		<field name="name">mod.extrait.view.form</field>
+		<field name="name">mod.extrait</field>
 		<field name="model">mod.extrait</field>
 		<field name="arch" type="xml">
-			<form string="">
+			<form string="extrait.n">
 				<sheet>											
 					<div class="oe_title">
 						<h1>Extrait</h1>
-						<h2><field name="n" placeholder="Nom"/></h2>
-						<h2><field name="p" placeholder="Prénoms"/></h2>
+						<h2><field name="nom" placeholder="Nom"/></h2>
+						<h2><field name="prenom" placeholder="Prénoms"/></h2>
 						<group>
 							<field name="dn"/>
 							<field name="ville_n"/>
-							<field name="pere"/>
-							<field name="mere"/>
+							<field name="pere" widget="many2one_clickable"/>
+							<field name="mere" widget="many2one_clickable"/>
+							<field name="matricule"/>
 						</group>
 					</div>					
 				</sheet>							

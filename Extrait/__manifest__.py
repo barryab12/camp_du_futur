@@ -4,7 +4,7 @@
 
     'summary': """Module de création d'extrait de naissance""",
 
-    'description': """Ce module permettra de créer des extraits de naissance""",
+    'description': """Ce module permettra de créer des extraits d'acte de naissance""",
 
     'author': "Brou Cédrick ATSE",
     'website': "http://www.groupecerco.com",
@@ -25,7 +25,7 @@
         'views/extrait_pdf.xml',
     ],
     # only loaded in demonstration mode
-    'images': ['static/src/img/icon.png'],
+    'images': ['/Extrait/static/src/img/icon.jpeg'],
     'license': 'AGPL-3',
     'installable': True,
     'application': True,
