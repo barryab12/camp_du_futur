@@ -5,8 +5,6 @@ from random import *
 
 class ExtraitPere(models.Model):
     _name = 'mod.pere'
-   
-    
 
     nom = fields.Char(string="Nom", required=True)
     prenom = fields.Char(string="Prénoms", required=True)
@@ -65,6 +63,12 @@ class Extrait(models.Model):
     ville_n = fields.Char(string="Ville de naissance")
     pere = fields.Many2one(comodel_name="mod.pere", string="Père")
     mere = fields.Many2one(comodel_name="mod.mere", string="Mère")
+    matricule = fields.Char(string="Matricule", compute='yli', store=True)
+
+    @api.depends('n', 'matricule','mere','pere')
+    def yli(self):
+        for record in self:
+            record.matricule = record.pere.nom[:2].upper() + record.mere.nom[:2].upper() + str(randrange(99999))
     
 
 # class ExtraitPdf(models.AbstractModel):
