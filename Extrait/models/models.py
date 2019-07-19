@@ -6,6 +6,7 @@ from random import *
 
 class ExtraitPere(models.Model):
     _name = 'mod.pere'
+    _rec_name = 'matricule'
 
     nom = fields.Char(string="Nom", default="", required=True)
     prenom = fields.Char(string="Prénoms", required=True)
@@ -29,6 +30,7 @@ class ExtraitPere(models.Model):
 
 class ExtraitMere(models.Model):
     _name = 'mod.mere'
+    _rec_name = 'matricule'
 
     nom = fields.Char(string="Nom", default="", required=True)
     prenom = fields.Char(string="Prénoms", required=True)
@@ -52,8 +54,9 @@ class ExtraitMere(models.Model):
 
 class Extrait(models.Model):
     _name = 'mod.extrait'
+    _rec_name = 'matricule'
 
-    nom = fields.Char(string="Nom", required=True)
+    nom = fields.Char(string="Nom", default="", required=True)
     prenom = fields.Char(string="Prénom(s)", required=True)
     dn = fields.Date(string="Date de naissance", default=fields.Date.today)
     ville_n = fields.Char(string="Ville de naissance")
@@ -69,9 +72,10 @@ class Extrait(models.Model):
             res.append((data.id, name))
         return res
 
-    @api.depends('pere', 'mere')
+    @api.depends('nom')
     def _mat(self):
-        self.matricule = self.pere
+        self.matricule = self.pere.nom[0:2].upper() + self.mere.nom[0:2].upper() + str(randrange(99999))
+        
     
 
 # class ExtraitPdf(models.AbstractModel):
