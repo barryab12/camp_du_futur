@@ -51,14 +51,14 @@
                         <p style="text-align: center; margin-left: -150px;">N 1.830 DU 25/08/1998</p>
                         <p style="text-align: center; margin-left: -150px;">du registre</p>
                         <p style="text-align: center; margin-left: -150px;">NAISSANCE DE:</p>
-                        <p style="text-align: center; margin-left: -150px;"><b t-field="doc.n"/> <b t-field="doc.p"/></p>
+                        <p style="text-align: center; margin-left: -150px;"><b t-field="doc.nom"/> <b t-field="doc.prenom"/></p>
                         <p style="text-align: center; margin-left: -150px;">.............................................</p>
                         <p style="text-align: center; margin-left: -150px;">.............................................</p>
                         <p style="text-align: center; margin-left: -150px;">.............................................</p>
                     </div>
                     <div class="table5" style="width:47%; margin-left:630px; margin-top:-220px;">
                         <p>Le <b t-field="doc.dn"/></p>
-                        <p>est ne <b t-field="doc.n"/> <b t-field="doc.p"/></p>
+                        <p>est ne <b t-field="doc.nom"/> <b t-field="doc.prenom"/></p>
                         <p>A <b t-field="doc.ville_n"/></p>
                         <p>fils de <b t-field="doc.pere.nom"/> <b t-field="doc.pere.prenom"/> et de <b t-field="doc.mere.nom"/> <b t-field="doc.mere.prenom"/></p>
                     </div>
