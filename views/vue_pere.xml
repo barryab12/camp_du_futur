@@ -45,6 +45,9 @@
 	</record> 
 
 
+	
+
+
 
 
 	
@@ -56,6 +59,7 @@
 			<tree>
 				<field name="nom"/>
 				<field name="prenom"/>
+				<field name="matricule"/>
 				<field name="dn"/>
 				<field name="ville_n"/>
 				<field name="prof"/>
@@ -70,6 +74,7 @@
 			<tree>
 				<field name="nom"/>
 				<field name="prenom"/>
+				<field name="matricule"/>
 				<field name="dn"/>
 				<field name="ville_n"/>
 				<field name="prof"/>
@@ -82,8 +87,9 @@
 		<field name="model">mod.extrait</field>
 		<field name="arch" type="xml">
 			<tree>
-				<field name="n"/>
-				<field name="p"/>
+				<field name="nom"/>
+				<field name="prenom"/>
+				<field name="matricule"/>
 				<field name="dn"/>
 				<field name="ville_n"/>
 				<field name="pere"/>
@@ -109,6 +115,7 @@
 						<h2><field name="prenom" placeholder="Prénoms"/></h2>
 						<h4><field name="prof" placeholder="Profession"/></h4>
 						<group>
+							<field name="matricule"/>
 							<field name="dn"/>
 							<field name="ville_n"/>
 						</group>
@@ -131,6 +138,7 @@
 						<h2><field name="prenom" placeholder="Prénoms"/></h2>
 						<h4><field name="prof" placeholder="Profession"/></h4>
 						<group>
+							<field name="matricule"/>
 							<field name="dn"/>
 							<field name="ville_n"/>
 						</group>
@@ -148,13 +156,14 @@
 				<sheet>											
 					<div class="oe_title">
 						<h1>Extrait</h1>
-						<h2><field name="n" placeholder="Nom"/></h2>
-						<h2><field name="p" placeholder="Prénoms"/></h2>
+						<h2><field name="nom" placeholder="Nom"/></h2>
+						<h2><field name="prenom" placeholder="Prénoms"/></h2>
 						<group>
 							<field name="dn"/>
 							<field name="ville_n"/>
 							<field name="pere"/>
 							<field name="mere"/>
+							<field name="matricule"/>
 						</group>
 					</div>					
 				</sheet>							

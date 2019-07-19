@@ -17,7 +17,7 @@
         id="report_session"
         model="mod.extrait"
         string="Extrait PDF"
-        name="actmode.mod_extrait_template"
+        name="poor.mod_extrait_template"
         file="report_session_view"
         report_type="qweb-pdf" />
 
@@ -64,7 +64,7 @@
                             </tr>
                             <tr style="width: 100%;">
                                 <td style="width:45%;  text-align: center">N°1.830 du 25/08/1998</td>
-                                <td style="padding-left: 20%">est né(e) <b t-field="doc.n"/> <b t-field="doc.p"/></td>
+                                <td style="padding-left: 20%">est né(e) <b t-field="doc.nom"/> <b t-field="doc.prenom"/></td>
                             </tr>
                             <tr style="width: 100%">
                                 <td style="width:45%; text-align: center">du registre</td>
@@ -79,7 +79,7 @@
                                 <td style="padding-left: 20%">et de <b t-field="doc.mere.nom"/> <b t-field="doc.mere.prenom"/></td>
                             </tr>
                             <tr style="width: 100%">
-                                <td style="width:45%; text-align: center"><b t-field="doc.n"/> <b t-field="doc.p"/></td>                               
+                                <td style="width:45%; text-align: center"><b t-field="doc.nom"/> <b t-field="doc.pere"/></td>                               
                             </tr>
                             <tr style="width: 100%">
                                 <td style="width:45%; text-align: center">.....................................................................</td>
