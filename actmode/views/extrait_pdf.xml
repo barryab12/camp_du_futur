@@ -1,17 +1,5 @@
 <odoo>
-    <!-- <record id="format_extrait" model="report.paperformat">
-		<field name="name">Extrait format PDF</field>
-		<field name="default" eval="True"/>
-		<field name="format">A4</field>
-		<field name="orientation">Portrait</field>
-		<field name="margin_top">10</field>
-		<field name="margin_bottom">10</field>
-		<field name="margin_left">10</field>
-		<field name="margin_right">10</field>
-		<field name="header_line" eval="False"/>
-		<field name="header_spacing">3</field>
-		<field name="dpi">90</field>
-	</record> -->
+   
     
     <report
         id="report_session"
@@ -29,7 +17,7 @@
                         <table style="width: 100%; text-align: center">
                             <tr >
                                 <td>REPUBLIQUE DE CÔTE D'IVOIRE</td>
-                                <td rowspan="6"><img src="data:image/png;base64,/actmode/static/src/img/icon.png" style="width: 100px;height: 120px;" /></td>
+                                <td rowspan="6"><img src="C:\Users\HP\Desktop\actmode\static\description\icon.png" style="width: 100px;height: 120px;" /></td>
                                 <td>EXTRAIT</td>
                             </tr>
                             <tr>
@@ -64,7 +52,7 @@
                             </tr>
                             <tr style="width: 100%;">
                                 <td style="width:45%;  text-align: center">N°1.830 du 25/08/1998</td>
-                                <td style="padding-left: 20%">est né(e) <b t-field="doc.n"/> <b t-field="doc.p"/></td>
+                                <td style="padding-left: 20%">est né(e) <b t-field="doc.nom"/> <b t-field="doc.prenom"/></td>
                             </tr>
                             <tr style="width: 100%">
                                 <td style="width:45%; text-align: center">du registre</td>
@@ -79,7 +67,7 @@
                                 <td style="padding-left: 20%">et de <b t-field="doc.mere.nom"/> <b t-field="doc.mere.prenom"/></td>
                             </tr>
                             <tr style="width: 100%">
-                                <td style="width:45%; text-align: center"><b t-field="doc.n"/> <b t-field="doc.p"/></td>                               
+                                <td style="width:45%; text-align: center"><b t-field="doc.nom"/> <b t-field="doc.prenom"/></td>                               
                             </tr>
                             <tr style="width: 100%">
                                 <td style="width:45%; text-align: center">.....................................................................</td>
@@ -105,7 +93,7 @@
                                 <td>Avec.....................................................................</td>
                             </tr>
                             <tr>
-                                <td>mariage dissousn par décision de divorce en date du.......................</td>
+                                <td>mariage dissous par décision de divorce en date du.......................</td>
                             </tr>
                             <tr>
                                 <td>décédé(e) le.................................................................</td>
