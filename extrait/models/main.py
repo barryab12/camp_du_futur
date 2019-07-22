@@ -13,6 +13,7 @@ class PerePere(models.Model):
 	profession = fields.Char(string='Profession')
 	photo = fields.Binary(string='photo')
 	matricule = fields.Char(string='Matricule', compute='_matr', readonly=True, store=True)
+	relate = fields.One2many(comodel_name='mod.extrait', inverse_name='pere')
 
 	@api.depends('nom')
 	def _matr(self):
@@ -37,6 +38,7 @@ class MereMere(models.Model):
 	profession = fields.Char(string='Profession')
 	photo = fields.Binary(string='photo')
 	matricule = fields.Char(string='Matricule', compute='_matr', readonly=True, store=True)
+	relate = fields.One2many(comodel_name='mod.extrait', inverse_name='mere')
 
 	@api.depends('nom')
 	def _matr(self):
@@ -65,7 +67,7 @@ class Extrait(models.Model):
 	fait = fields.Date(string='Fait le', default=fields.Date.today, required=True)
 	matricule = fields.Char(string='Matricule', compute='_matr', readonly=True, store=True)
 
-	@api.depends('nom','matricule')
+	@api.depends('noms','matricule')
 	def _matr(self):
 		for rec in self:
 			rec.matricule = rec.pere.nom[:2].upper() + rec.mere.nom[:2].upper() + str(randrange(99999))

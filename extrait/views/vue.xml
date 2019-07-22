@@ -114,6 +114,16 @@
             <group>
               <field name="matricule" />
             </group>
+
+            <notebook>
+              <page string="Informations sur les enfant(s)">
+                <field name="relate">
+                <field name="date"/>
+                <field name="matricule"/>
+                </field>
+              </page>
+            </notebook>
+
           </div>
         </sheet>
       </form>
@@ -141,6 +151,17 @@
              <group>
               <field name="matricule" />
             </group>
+
+            <notebook>
+              <page string="Informations sur les enfant(s)">
+                <field name="relate">
+                <field name="date"/>
+                <field name="matricule"/>
+                </field>
+              </page>
+            </notebook>
+
+
           </div>
         </sheet>
       </form>
