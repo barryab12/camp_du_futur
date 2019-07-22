@@ -11,9 +11,10 @@ class ExtraitPere(models.Model):
     dn = fields.Date(string="Date de naissance")
     ville_n = fields.Char(string="Ville de naissance")
     prof = fields.Char(string="Proffession")
-    matricule = fields.Char(string="Matricule", compute='_vio', store=True)
+    matricule = fields.Char(string="Matricule", compute='_vio', store=False)
     photo = fields.Binary(string="Photo")
     pati = fields.One2many(comodel_name= 'mod.extrait', inverse_name='pere')
+    
 
     @api.multi
     def name_get(self):
@@ -39,7 +40,7 @@ class ExtraitMere(models.Model):
     dn = fields.Date(string="Date de naissance")
     ville_n = fields.Char(string="Ville de naissance")
     prof = fields.Char(string="Profession")
-    matricule = fields.Char(string="Matricule", compute='vie', store=True)
+    matricule = fields.Char(string="Matricule", compute='vie')
     photo = fields.Binary(string="Photo")
     pati = fields.One2many(comodel_name= 'mod.extrait', inverse_name='mere')
 
@@ -71,6 +72,8 @@ class Extrait(models.Model):
     pere = fields.Many2one(comodel_name="mod.pere", string="Père")
     mere = fields.Many2one(comodel_name="mod.mere", string="Mère")
     matricule = fields.Char(string="Matricule", compute='yli', store=True)
+    upload_file = fields.Many2many('ir.attachment', string="Uploadez le fichier")
+    file_name = fields.Char(string="File Name")
   
 
 
