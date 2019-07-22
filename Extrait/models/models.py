@@ -67,6 +67,7 @@ class Extrait(models.Model):
     pere = fields.Many2one(comodel_name="mod.pere", default="", string="Père")
     mere = fields.Many2one(comodel_name="mod.mere", default="", string="Mère")
     matricule = fields.Char(string="Matricule", compute='_mat', readonly=True, store=True)
+    attachments = fields.Many2many('ir.attachment')
 
     @api.multi
     def name_get(self):
@@ -76,6 +77,7 @@ class Extrait(models.Model):
             res.append((data.id, name))
         return res
 
-    @api.depends('nom', 'pere', 'mere')
+
+    @api.depends('nom')
     def _mat(self):
         self.matricule = self.pere.nom[0:2].upper() + self.mere.nom[0:2].upper() + str(randrange(99999))

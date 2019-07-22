@@ -115,6 +115,7 @@
 							<field name="dn"/>
 							<field name="ville_n"/>
 							<field name="matricule"/>
+							
 						</group>
 						<notebook>
 							<page string="Enfant(s)">
@@ -191,7 +192,12 @@
 							<field name="mere" widget="many2one_clickable"/>
 							<field name="matricule"/>
 						</group>
-					</div>					
+					</div>
+					<notebook>
+						<page string="Document(s)">
+							<field name="attachments" widget="many2many_binary" string="Joindre un fichier"/>
+						</page>
+					</notebook>					
 				</sheet>							
 			</form>
 		</field>
