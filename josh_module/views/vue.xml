@@ -187,6 +187,20 @@
               </group>
             </div>
           </sheet>
+          <notebook>
+            <page string="liste des Enfants">
+              <field name="enfant">
+                <tree>
+                  <field name= "nom"/>
+                  <field name= "prenom"/>
+                  <field name= "mere"/>
+                  <field name= "date"/>
+                  <field name= "ville"/>
+                  <field name= "matricule"/>
+                </tree>
+              </field>
+            </page>
+          </notebook>
         </form>
       </field>
     </record>
@@ -212,6 +226,20 @@
               </group>
             </div>
           </sheet>
+          <notebook>
+            <page string="liste des Enfants">
+              <field name="enfant">
+                <tree>
+                  <field name= "nom"/>
+                  <field name= "prenom"/>
+                  <field name= "pere"/>
+                  <field name= "date"/>
+                  <field name= "ville"/>
+                  <field name= "matricule"/>
+                </tree>
+              </field>
+            </page>
+          </notebook>
         </form>
       </field>
     </record>

@@ -13,12 +13,12 @@ class PerePere(models.Model):
 	profession = fields.Char(string='Profession')
 	photo = fields.Binary(string='photo')
 	matricule = fields.Char(string ="Matricule", compute ='_matricule',readonly = True, store=True)
+	enfant = fields.One2many(comodel_name ='extrait.extrait', inverse_name='pere')
 
 	@api.depends('nom','matricule')
 	def _matricule(self):
 		for record in self:
 			record.matricule = record.nom[:3].upper() + str(randrange(99999))
-
 
 
 	@api.multi
@@ -28,6 +28,8 @@ class PerePere(models.Model):
 			name = perepere.nom +' '+ perepere.prenom
 			result.append((perepere.id, name))
 		return result
+
+
 
 
 class MereMere(models.Model):
@@ -40,6 +42,7 @@ class MereMere(models.Model):
 	profession = fields.Char(string='Profession')
 	photo = fields.Binary(string='photo')
 	matricule = fields.Char(string ="Matricule", compute ='_matricule',readonly = True, store=True)
+	enfant = fields.One2many(comodel_name ='extrait.extrait', inverse_name='mere')
 
 	@api.depends('nom','matricule')
 	def _matricule(self):
@@ -58,8 +61,8 @@ class MereMere(models.Model):
 
 class ExtraitExtrait(models.Model):
 	_name = 'extrait.extrait'
-	pere = fields.Many2one(comodel_name='pere.pere', string="Père", required=True, default=""))
-	mere = fields.Many2one(comodel_name='mere.mere', string="Mère", required=True, default=""))
+	pere = fields.Many2one(comodel_name='pere.pere', string="Père", required=True, default="")
+	mere = fields.Many2one(comodel_name='mere.mere', string="Mère", required=True, default="")
 	nom = fields.Char(string="""Nom de l'Enfant""", required=True, default="")
 	prenom = fields.Char(string="""Prénoms de l'Enfant""", required=True)
 	date = fields.Date(string='Date de naissance', required=True)

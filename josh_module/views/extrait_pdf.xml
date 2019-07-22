@@ -4,7 +4,7 @@
     id="extrait_pdf"
     model="extrait.extrait"
     string="Extrait"
-    name="josh_module.extrait_pdf"
+    name="pp.extrait_pdf"
     file="extrait_pdf_view"
     report_type="qweb-pdf"
   />
