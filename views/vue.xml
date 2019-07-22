@@ -94,6 +94,7 @@
         <field name ='nom_du_pere'/>
         <field name='nom_de_la_mere'/>
         <field name ='matricule'/>
+        <field name='fichier_à_joindre'/>
       </tree>
     </field>
   </record>
@@ -194,6 +195,11 @@
               <field name ='nom_du_pere'/>
               <field name='nom_de_la_mere'/>
               <field name ='matricule'/>
+            </group>
+          </div>
+          <div>
+            <group>
+              <field name="fichier_à_joindre" widget="many2many_binary" string="Joindre un fichier"/>            
             </group>
           </div>
         </sheet>
