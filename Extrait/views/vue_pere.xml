@@ -116,6 +116,20 @@
 							<field name="ville_n"/>
 							<field name="matricule"/>
 						</group>
+						<notebook>
+							<page string="Enfant(s)">
+								<field name="enfant">
+									<tree string="Enfant(s)">
+										<field name="nom"/>
+										<field name="prenom"/>
+										<field name="dn"/>
+										<field name="ville_n"/>
+										<field name="mere"/>
+										<field name="matricule"/>
+									</tree>
+								</field>
+							</page>
+						</notebook>
 					</div>					
 				</sheet>							
 			</form>
@@ -139,7 +153,22 @@
 							<field name="ville_n"/>
 							<field name="matricule"/>
 						</group>
-					</div>					
+						
+					</div>
+					<notebook>
+						<page string="Enfant(s)">
+							<field name="enfant">
+								<tree string="Enfant(s)">
+									<field name="nom"/>
+									<field name="prenom"/>
+									<field name="dn"/>
+									<field name="ville_n"/>
+									<field name="pere"/>
+									<field name="matricule"/>
+								</tree>
+							</field>
+						</page>
+					</notebook>				
 				</sheet>							
 			</form>
 		</field>

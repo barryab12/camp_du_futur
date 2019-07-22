@@ -38,7 +38,7 @@
                                 <td>du registre des actes de l'Etat Civil</td>
                             </tr>
                             <tr>
-                                <td>SOUS-PREFECTURE DE DALOA</td>
+                                <td>SOUS-PREFECTURE DE <b t-field="doc.ville_n"/></td>
                                 <td>pour l'année </td>
                             </tr>
                             <tr>
@@ -117,7 +117,7 @@
                                 <td style="width: 100%; text-align: center">Certifié le présent extrait conforme aux indications portées au registre.</td>
                             </tr>
                             <tr>
-                                <td style="width: 100%; text-align: right"><br/><br/>  Délivré à DALOA le <b t-field="doc.dn"/></td>
+                                <td style="width: 100%; text-align: right"><br/><br/>  Délivré à <b t-field="doc.ville_n"/> le <b t-field="doc.dn"/></td>
                             </tr>
                         </table>
                     </div>

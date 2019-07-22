@@ -15,6 +15,7 @@ class ExtraitPere(models.Model):
     prof = fields.Char(string="Profession")
     photo = fields.Binary(string="Photo")
     matricule = fields.Char(string="Matricule", compute='_mat', readonly=True, store=True)
+    enfant = fields.One2many(comodel_name='mod.extrait', inverse_name='pere')
 
     @api.multi
     def name_get(self):
@@ -39,6 +40,8 @@ class ExtraitMere(models.Model):
     prof = fields.Char(string="Profession")
     photo = fields.Binary(string="Photo")
     matricule = fields.Char(string="Matricule", compute='_mat', readonly=True, store=True)
+    enfant = fields.One2many(comodel_name='mod.extrait', inverse_name='mere')  
+    
 
     @api.multi
     def name_get(self):
@@ -51,6 +54,7 @@ class ExtraitMere(models.Model):
     @api.depends('nom')
     def _mat(self):
         self.matricule = self.nom[0:3].upper() + str(randrange(99999))
+    
 
 class Extrait(models.Model):
     _name = 'mod.extrait'
@@ -72,21 +76,6 @@ class Extrait(models.Model):
             res.append((data.id, name))
         return res
 
-    @api.depends('nom')
+    @api.depends('nom', 'pere', 'mere')
     def _mat(self):
         self.matricule = self.pere.nom[0:2].upper() + self.mere.nom[0:2].upper() + str(randrange(99999))
-        
-    
-
-# class ExtraitPdf(models.AbstractModel):
-#     _name = 'mod.extraitpdf'
-#     @api.model
-#     def render_pdf(self, docids, data=None):
-#         report_obj = self.env['report']
-#         report = report_obj._get_report_from_name('module.report_name')
-#         docargs = {
-#             'doc_ids': docids,
-#             'doc_model': report.model,
-#             'docs': self,
-#         }
-#         return report_obj.render('module.report_name', docargs)
