@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Extrait d'acte de naissance",
-    'version': '2.3.1',
+    'version': '2.7.1',
     'summary': """Créer un extrait d'acte de naissance format PDF""",
     'description': """
         Ce module permet de créer et gérer la confection d'acte

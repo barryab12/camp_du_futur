@@ -206,6 +206,11 @@
               <field name ='fait' />
             </group>
 
+            <group>
+              <field name ='upload_file' widget="many2many_binary" filename="file" />
+              <field name ='file' invisible="3" />
+            </group>
+
           </div>
         </sheet>
       </form>

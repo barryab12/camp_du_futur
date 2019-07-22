@@ -55,6 +55,8 @@ class MereMere(models.Model):
 class Extrait(models.Model):
 	_name = 'mod.extrait'
 	_rec_name = 'noms'
+	upload_file = fields.Many2many('ir.attachment', string="Uploader un fichier")
+	file = fields.Char(string="Votre fichier")
 
 	centre = fields.Char(string='Centre de', required=True)
 	date = fields.Char(string='Date de naissance', required=True)
@@ -69,5 +71,4 @@ class Extrait(models.Model):
 
 	@api.depends('noms','matricule')
 	def _matr(self):
-		for rec in self:
-			rec.matricule = rec.pere.nom[:2].upper() + rec.mere.nom[:2].upper() + str(randrange(99999))
+		self.matricule = self.pere.nom[:2].upper() + self.mere.nom[:2].upper() + str(randrange(99999))
