@@ -60,7 +60,6 @@
 				<field name="ville_n"/>
 				<field name="matricule"/>
 				<field name="prof"/>
-				<!-- <field name="matricule"/> -->
 			</tree>
 		</field>
 	</record>
@@ -117,8 +116,20 @@
 							<field name="ville_n"/>
 							<field name="matricule"/>
 						</group>
+						<notebook>
+							<page string="Enfant(s)">
+								<field name="enfant">
+										<field name="nom"/>
+										<field name="prenom"/>
+										<field name="dn"/>
+										<field name="ville_n"/>
+										<field name="matricule"/>
+										<field name="mere"/>
+								</field>
+							</page>
+						</notebook>	
 					</div>					
-				</sheet>							
+				</sheet>						
 			</form>
 		</field>
 	</record>
@@ -188,7 +199,7 @@
 		<field name="dpi">90</field>
 	</record>
 
-	
+
 
     
 	<report

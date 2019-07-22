@@ -15,6 +15,8 @@ class ExtraitPere(models.Model):
     matricule = fields.Char(string="votre matricule", compute="_matricule", readonly=True, store=True)
     prof = fields.Char(string="Profession")
     photo = fields.Binary(string="Photo")
+    enfant = fields.One2many(comodel_name="mod.extrait", inverse_name="pere")
+
 
     @api.multi
     def name_get(self):
@@ -27,6 +29,16 @@ class ExtraitPere(models.Model):
     @api.depends('nom', 'matricule')
     def _matricule(self):
         self.matricule = self.nom[:3].upper() +str(randrange(99999))
+
+    # @api.depends('salaire', 'multiplier')
+    # def _poolet(self):
+    #   for record in self:
+    #       if record.nom == record.Extrait.pere.nom
+    #           record.pool = record.salaire * 2
+    #       elif record.multiplier == 'TRIPLE':
+    #           record.n_salaire = record.salaire * 3
+    #       else:
+    #           record.n_salaire = record.salaire
         
 
 
@@ -58,13 +70,13 @@ class Extrait(models.Model):
     _name = 'mod.extrait'
     _rec_name = 'nom'
 
-    nom = fields.Char(string="Nom", required=True, default="")
+    nom = fields.Char(string="Nom", required=True)
     prenom = fields.Char(string="Prénom(s)", required=True)
     dn = fields.Date(string="Date de naissance", default=fields.Date.today)
     ville_n = fields.Char(string="Ville de naissance")
     matricule = fields.Char(string="votre matricule", compute="_matricule", readonly=True, store=True)
-    pere = fields.Many2one(comodel_name="mod.pere", string = "pere", default="")
-    mere = fields.Many2one(comodel_name="mod.mere", string="Mère", default="")
+    pere = fields.Many2one(comodel_name="mod.pere", string = "pere")
+    mere = fields.Many2one(comodel_name="mod.mere", string="Mère")
 
     @api.multi
     def name_get(self):
@@ -73,6 +85,7 @@ class Extrait(models.Model):
             name = Extrait.nom +' '+ Extrait.prenom
             res.append((Extrait.id, name))
         return res
+
 
     @api.depends('nom','matricule')
     def _matricule(self):
