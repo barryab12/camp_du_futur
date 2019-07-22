@@ -13,6 +13,7 @@ class ExtraitPere(models.Model):
     prof = fields.Char(string="Proffession")
     matricule = fields.Char(string="Matricule", compute='_vio', store=True)
     photo = fields.Binary(string="Photo")
+    pati = fields.One2many(comodel_name= 'mod.extrait', inverse_name='pere')
 
     @api.multi
     def name_get(self):
@@ -27,6 +28,7 @@ class ExtraitPere(models.Model):
         for record in self:
             record.matricule = record.nom[:3].upper() + str(randrange(99999))
 
+
 class ExtraitMere(models.Model):
     _name = 'mod.mere'
     
@@ -37,8 +39,9 @@ class ExtraitMere(models.Model):
     dn = fields.Date(string="Date de naissance")
     ville_n = fields.Char(string="Ville de naissance")
     prof = fields.Char(string="Profession")
-    matricule = fields.Char(string="Matricule", compute='vie')
+    matricule = fields.Char(string="Matricule", compute='vie', store=True)
     photo = fields.Binary(string="Photo")
+    pati = fields.One2many(comodel_name= 'mod.extrait', inverse_name='mere')
 
     @api.multi
     def name_get(self):
@@ -54,6 +57,10 @@ class ExtraitMere(models.Model):
             record.matricule = record.nom[:3].upper() + str(randrange(99999))
 
 
+
+
+
+
 class Extrait(models.Model):
     _name = 'mod.extrait'
 
@@ -64,11 +71,13 @@ class Extrait(models.Model):
     pere = fields.Many2one(comodel_name="mod.pere", string="Père")
     mere = fields.Many2one(comodel_name="mod.mere", string="Mère")
     matricule = fields.Char(string="Matricule", compute='yli', store=True)
+  
+
 
     @api.depends('n', 'matricule','mere','pere')
     def yli(self):
         for record in self:
-            record.matricule = record.pere.nom[:2].upper() + record.mere.nom[:2].upper() + str(randrange(99999))
+            record.matricule = record.pere.nom[:2].upper() + str(randrange(99999))
     
 
 # class ExtraitPdf(models.AbstractModel):

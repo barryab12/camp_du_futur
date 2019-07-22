@@ -116,6 +116,15 @@
 							<field name="matricule"/>
 							
 						</group>
+						<notebook>
+							<page string="Informations sur ces enfant(s)">
+								<field name="pati">
+								<field name="pati"></field>
+								<field name="dn"/>
+								<field name="matricule"/>
+								</field>
+							</page>
+						</notebook>
 					</div>					
 				</sheet>							
 			</form>
@@ -141,6 +150,15 @@
 							<field name="matricule"/>
 							
 						</group>
+						<notebook>
+							<page string="Informations sur les enfant(s)">
+								<field name="pati">
+								<field name="pati"></field>
+								<field name="dn"/>
+								<field name="matricule"/>
+								</field>
+							</page>
+						</notebook>
 					</div>					
 				</sheet>							
 			</form>
@@ -164,6 +182,7 @@
 							<field name="mere"/>
 							<field name="matricule"/>
 						</group>
+
 					</div>					
 				</sheet>							
 			</form>
