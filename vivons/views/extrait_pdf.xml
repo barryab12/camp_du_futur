@@ -16,8 +16,8 @@
     <report
         id="report_session"
         model="mod.extrait"
-        string="Le PDF"
-        name="naitre.mod_extrait_template"
+        string="PDF"
+        name="vivons.mod_extrait_template"
         file="report_session_view"
         report_type="qweb-pdf" />
 
@@ -29,6 +29,7 @@
                         <table style="width: 100%; text-align: center">
                             <tr >
                                 <td>REPUBLIQUE DE CÔTE D'IVOIRE</td>
+                                <td rowspan="6"><img src="C:\Users\mimi coul\Desktop\vivons\static/cote.png" alt="L'armoirie de la Côte d'Ivoire" style="width: 100px;height: 120px;" /></td>
                                 
                                 <td>EXTRAIT</td>
                             </tr>
@@ -38,7 +39,7 @@
                                 <td>du registre des actes de l'Etat Civil</td>
                             </tr>
                             <tr>
-                                <td>SOUS-PREFECTURE DE DALOA</td>
+                                <td>SOUS-PREFECTURE DE ABIDJAN</td>
                                 <td>pour l'année </td>
                             </tr>
                             <tr>
@@ -63,7 +64,7 @@
                                 <td style="padding-left: 20%">Le <b t-field="doc.dn"/></td>
                             </tr>
                             <tr style="width: 100%;">
-                                <td style="width:45%;  text-align: center">N°1.830 du 25/08/1998</td>
+                                <td style="width:45%;  text-align: center">N°8.258 du 26/11/1997</td>
                                 <td style="padding-left: 20%">est né(e) <b t-field="doc.n"/> <b t-field="doc.p"/></td>
                             </tr>
                             <tr style="width: 100%">
@@ -117,7 +118,7 @@
                                 <td style="width: 100%; text-align: center">Certifié le présent extrait conforme aux indications portées au registre.</td>
                             </tr>
                             <tr>
-                                <td style="width: 100%; text-align: right"><br/><br/>  Délivré à DALOA le <b t-field="doc.dn"/></td>
+                                <td style="width: 100%; text-align: right"><br/><br/>  Délivré à ABIDJAN le <b t-field="doc.dn"/></td>
                             </tr>
                         </table>
                     </div>

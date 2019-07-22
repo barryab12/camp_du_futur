@@ -6,14 +6,14 @@ from random import *
 class ExtraitPere(models.Model):
     _name = 'mod.pere'
 
-    nom = fields.Char(string="Nom", required=True)
+    nom = fields.Char(string="Nom", default="" ,required=True )
     prenom = fields.Char(string="Prénoms", required=True)
     dn = fields.Date(string="Date de naissance")
     ville_n = fields.Char(string="Ville de naissance")
-    prof = fields.Char(string="Proffession")
-    matricule = fields.Char(string="Matricule", compute='_vio', store=True)
+    prof = fields.Char(string="Profession")
+    matricule = fields.Char(string="Matricule", compute='_vie', store=True)
     photo = fields.Binary(string="Photo")
-    pati = fields.One2many(comodel_name= 'mod.extrait', inverse_name='pere')
+    myri = fields.One2many(comodel_name= 'mod.extrait', inverse_name='pere')
 
     @api.multi
     def name_get(self):
@@ -24,7 +24,7 @@ class ExtraitPere(models.Model):
         return result
 
     @api.depends('nom', 'matricule')
-    def _vio(self):
+    def _vie(self):
         for record in self:
             record.matricule = record.nom[:3].upper() + str(randrange(99999))
 
@@ -34,14 +34,14 @@ class ExtraitMere(models.Model):
     
     
 
-    nom = fields.Char(string="Nom", required=True)
+    nom = fields.Char(string="Nom", default="" , required=True)
     prenom = fields.Char(string="Prénoms", required=True)
     dn = fields.Date(string="Date de naissance")
     ville_n = fields.Char(string="Ville de naissance")
     prof = fields.Char(string="Profession")
     matricule = fields.Char(string="Matricule", compute='vie', store=True)
     photo = fields.Binary(string="Photo")
-    pati = fields.One2many(comodel_name= 'mod.extrait', inverse_name='mere')
+    myri = fields.One2many(comodel_name= 'mod.extrait', inverse_name='mere')
 
     @api.multi
     def name_get(self):
@@ -70,15 +70,14 @@ class Extrait(models.Model):
     ville_n = fields.Char(string="Ville de naissance")
     pere = fields.Many2one(comodel_name="mod.pere", string="Père")
     mere = fields.Many2one(comodel_name="mod.mere", string="Mère")
-    matricule = fields.Char(string="Matricule", compute='yli', store=True)
-  
+    matricule = fields.Char(string="Matricule", compute='_mii', store=True)
+    attachment_ids = fields.Many2many('ir.attachment', string="upload")
+    file_name = fields.char(string="file name")
 
-
-    @api.depends('n', 'matricule','mere','pere')
-    def yli(self):
+    @api.depends('n', 'matricule')
+    def _mii(self):
         for record in self:
-            record.matricule = record.pere.nom[:2].upper() + str(randrange(99999))
-    
+            record.matricule = record.pere.nom[:2].upper() + record.mere.nom[:2].upper() + str(randrange(99999))
 
 # class ExtraitPdf(models.AbstractModel):
 #     _name = 'mod.extraitpdf'
