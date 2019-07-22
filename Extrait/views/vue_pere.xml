@@ -173,8 +173,9 @@
 							<field name="matricule"/>
 							<field name="pere"/>
 							<field name="mere"/>
+							<field name="attachment" widget="many2many_binary"/>
 						</group>
-					</div>					
+					</div>				
 				</sheet>							
 			</form>
 		</field>
@@ -227,8 +228,7 @@
 			</t>
 		</t>
 	</template> -->
-
-	<menuitem id="menu_extrait" name="Extrait de naissance"/>
+    <menuitem id="menu_extrait" name="Extrait de naissance"/>
 	<menuitem id="menu_extrait_pere" parent="menu_extrait" name="Père" action="mod_pere_action"/>
 	<menuitem id="menu_extrait_mere" parent="menu_extrait" name="Mère" action="mod_mere_action"/>
 	<menuitem id="menu_extrait_pdf" parent="menu_extrait" name="Extrait" action="mod_extrait_action"/>

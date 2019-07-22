@@ -6,7 +6,6 @@ from random import randrange
 
 class ExtraitPere(models.Model):
     _name = 'mod.pere'
-    _rec_name = 'nom'
 
     nom = fields.Char(string="Nom", required=True, default="")
     prenom = fields.Char(string="Prénoms", required=True)
@@ -21,9 +20,9 @@ class ExtraitPere(models.Model):
     @api.multi
     def name_get(self):
         res = []
-        for ExtraitPere in self:
-            name = ExtraitPere.nom +' '+ ExtraitPere.prenom
-            res.append((ExtraitPere.id, name))
+        for pere in self:
+            name = pere.nom +' '+ pere.prenom
+            res.append((pere.id, name))
         return res
 
     @api.depends('nom', 'matricule')
@@ -44,7 +43,6 @@ class ExtraitPere(models.Model):
 
 class ExtraitMere(models.Model):
     _name = 'mod.mere'
-    _rec_name = 'nom'
 
     nom = fields.Char(string="Nom", required=True, default="")
     prenom = fields.Char(string="Prénoms", required=True)
@@ -57,9 +55,9 @@ class ExtraitMere(models.Model):
     @api.multi
     def name_get(self):
         res = []
-        for ExtraitMere in self:
-            name = ExtraitMere.nom +' '+ ExtraitMere.prenom
-            res.append((ExtraitMere.id, name))
+        for mere in self:
+            name = mere.nom +' '+ mere.prenom
+            res.append((mere.id, name))
         return res
 
     @api.depends('nom', 'matricule')
@@ -68,7 +66,6 @@ class ExtraitMere(models.Model):
 
 class Extrait(models.Model):
     _name = 'mod.extrait'
-    _rec_name = 'nom'
 
     nom = fields.Char(string="Nom", required=True)
     prenom = fields.Char(string="Prénom(s)", required=True)
@@ -77,13 +74,14 @@ class Extrait(models.Model):
     matricule = fields.Char(string="votre matricule", compute="_matricule", readonly=True, store=True)
     pere = fields.Many2one(comodel_name="mod.pere", string = "pere")
     mere = fields.Many2one(comodel_name="mod.mere", string="Mère")
+    attachment = fields.Many2many('ir.attachment', string="Joindre un fichier")
 
     @api.multi
     def name_get(self):
         res = []
-        for Extrait in self:
-            name = Extrait.nom +' '+ Extrait.prenom
-            res.append((Extrait.id, name))
+        for extrait in self:
+            name = extrait.nom +' '+ extrait.prenom
+            res.append((extrait.id, name))
         return res
 
 
