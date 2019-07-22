@@ -88,6 +88,7 @@
         <field name='numero_de_l_extrait'/>
         <field name='heure'/>
         <field name ='matricule'/>
+        <field name ='telecharger'/>
       </tree>
     </field>
   </record>
@@ -198,6 +199,7 @@
             </group>
             <group>
                <field name='numero_de_l_extrait'/>
+               <field name="telecharger" widget="many2many_binary" string="Attach a file"/>
             </group>
           </div>
         </sheet>

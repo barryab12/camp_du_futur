@@ -80,6 +80,7 @@ class ExtraitExtrait(models.Model):
 	numero_de_l_extrait = fields.Char(string='numero_de_l_extrait')
 	heure = fields.Char(string='Heure', required=True)
 	matricule = fields.Char(string='Matricule', compute='_mati', readonly=True, store=True)
+	telecharger = fields.Many2many("ir.attachment", "partner_id", string='Telecharger')
 
 	@api.depends('nom')
 	def _mati(self):
