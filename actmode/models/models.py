@@ -74,12 +74,16 @@ class Extrait(models.Model):
     ville_n = fields.Char(string="Ville de naissance")
     pere = fields.Many2one(comodel_name="mod.pere", default="", string="Père")
     mere = fields.Many2one(comodel_name="mod.mere", default="",string="Mère")
-    matricule=fields.Char(string = "Matricule",compute= '_matri',readonly= True, store=True)
+    matricule=fields.Char(string="Matricule",compute= '_matri',readonly= True, store=True)
+    telechargement_fichier = fields.Many2many( 'ir.attachment', string="Telechargement_fichier")
+    
     
     @api.depends('nom')
     def _matri(self):
         for rec in self:
-            les = rec.nom[:3]
+            le = rec.pere.nom[:2]
+            la = rec.mere.nom[:2]
+            les = le + la
             b = ''
             while len(b) < 5:
                 mat = randint(0,9)

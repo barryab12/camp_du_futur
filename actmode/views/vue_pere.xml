@@ -81,6 +81,7 @@
 				<field name="ville_n"/>
 				<field name="pere"/>
 				<field name="mere"/>
+				<field name="telechargement_fichier"/>
 			</tree>
 		</field>
 	</record>
@@ -100,6 +101,7 @@
 						<group>
 							<field name="dn"/>
 							<field name="ville_n"/>
+							<field name="matricule"/>
 						</group>
 					
 						<notebook>
@@ -134,6 +136,7 @@
 						<group>
 							<field name="dn"/>
 							<field name="ville_n"/>
+							<field name="matricule"/>
 						</group>
 						<notebook>
 							<page string="Enfant">
@@ -169,6 +172,8 @@
 							<field name="ville_n"/>
 							<field name="pere"/>
 							<field name="mere"/>
+							<field name="matricule"/>
+							<field name="telechargement_fichier" widget="many2many_binary" string="telechargement_fichier"/>
 						</group>
 					</div>					
 				</sheet>							
