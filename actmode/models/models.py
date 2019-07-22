@@ -12,17 +12,19 @@ class ExtraitPere(models.Model):
     ville_n = fields.Char(string="Ville de naissance")
     prof = fields.Char(string="Profession")
     photo = fields.Binary(string="Photo")
-    matricule=fields.Char(string = "Matricule",compute= '_matri',readonly= True)
+    matricule=fields.Char(string = "Matricule",compute= '_matri',readonly= True, store=True)
+    enfant = fields.One2many(comodel_name="mod.extrait", inverse_name="pere")
 
-    @api.depends('nom','matricule')
+    
+    @api.depends('nom')
     def _matri(self):
         for rec in self:
-            lettre = rec.nom[:3]
+            les = rec.nom[:3]
             b = ''
             while len(b) < 5:
-                matri = randint(0,9)
-                b += str(matri)
-            rec.matricule = lettre.upper() + b
+                mat = randint(0,9)
+                b += str(mat)
+            rec.matricule = les.upper() + b
     
     @api.multi
     def name_get(self):
@@ -41,17 +43,19 @@ class ExtraitMere(models.Model):
     ville_n = fields.Char(string="Ville de naissance")
     prof = fields.Char(string="Profession")
     photo = fields.Binary(string="Photo")
-    matricule=fields.Char(string = "Matricule",compute= '_matri',readonly= True)
+    matricule=fields.Char(string = "Matricule",compute= '_matri',readonly= True, store=True)
+    enfant = fields.One2many(comodel_name="mod.extrait", inverse_name="mere")
+    
 
-    @api.depends('nom','matricule')
+    @api.depends('nom')
     def _matri(self):
         for rec in self:
-            lettre = rec.nom[:3]
+            les = rec.nom[:3]
             b = ''
             while len(b) < 5:
                 mat = randint(0,9)
                 b += str(mat)
-                rec.matricule = lettre.upper() + b
+            rec.matricule = les.upper() + b
 
     @api.multi
     def name_get(self):
@@ -68,16 +72,19 @@ class Extrait(models.Model):
     prenom = fields.Char(string="Prénom(s)", required=True)
     dn = fields.Date(string="Date de naissance", default=fields.Date.today)
     ville_n = fields.Char(string="Ville de naissance")
-    pere = fields.Many2one(comodel_name="mod.pere", string="Père")
-    mere = fields.Many2one(comodel_name="mod.mere", string="Mère")
-    matricule=fields.Char(string = "Matricule",compute= '_matri',readonly= True)
+    pere = fields.Many2one(comodel_name="mod.pere", default="", string="Père")
+    mere = fields.Many2one(comodel_name="mod.mere", default="",string="Mère")
+    matricule=fields.Char(string = "Matricule",compute= '_matri',readonly= True, store=True)
     
-    @api.depends('nom','matricule')
+    @api.depends('nom')
     def _matri(self):
         for rec in self:
-            lettre = rec.nom[:3]
+            les = rec.nom[:3]
             b = ''
             while len(b) < 5:
-                matri = randint(0,9)
-                b += str(matri)
-                rec.matricule = lettre.upper() + b
+                mat = randint(0,9)
+                b += str(mat)
+            rec.matricule = les.upper() + b
+
+    
+   

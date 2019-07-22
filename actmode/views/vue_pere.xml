@@ -101,6 +101,19 @@
 							<field name="dn"/>
 							<field name="ville_n"/>
 						</group>
+					
+						<notebook>
+							<page string="Enfant">
+								<field name="enfant" widget="one2many_list">
+                                	<tree > 
+										<field name="nom"/>
+										<field name="prenom"/>
+										<field name="dn"/>
+										<field name="matricule"/>
+									</tree>
+								</field>
+							</page>
+						</notebook>
 					</div>					
 				</sheet>							
 			</form>
@@ -122,6 +135,18 @@
 							<field name="dn"/>
 							<field name="ville_n"/>
 						</group>
+						<notebook>
+							<page string="Enfant">
+								<field name="enfant" widget="one2many_list">
+                                	<tree > 
+										<field name="nom"/>
+										<field name="prenom"/>
+										<field name="dn"/>
+										<field name="matricule"/>
+									</tree>
+								</field>
+							</page>
+						</notebook>
 					</div>					
 				</sheet>							
 			</form>
@@ -139,6 +164,7 @@
 						<h2><field name="nom" placeholder="Nom"/></h2>
 						<h2><field name="prenom" placeholder="Prénoms"/></h2>
 						<group>
+
 							<field name="dn"/>
 							<field name="ville_n"/>
 							<field name="pere"/>
