@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!-- menu du pere -->
+  <record id="pere_menu_action" model="ir.actions.act_window">
+    <field name="name">Pere</field>
+    <field name="res_model">pere.pere</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Enregistrer un père</p>
+    </field>
+  </record>
+  <menuitem id="menu" name="Extrait d'Acte de Naissance"/>
+  <menuitem id="pere_menu" name="Pere" parent="menu" action="pere_menu_action"/>
+
+<!--menu de la mere -->
+  <record id="mere_menu_action" model="ir.actions.act_window">
+    <field name="name">Mere</field>
+    <field name="res_model">mere.mere</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Enregistrer une mère</p>
+    </field>
+  </record>
+  <menuitem id="menu" name="Extrait d'Acte de Naissance"/>
+  <menuitem id="mere_menu" name="Mere" parent="menu" action="mere_menu_action"/>
+
+
+<!-- menu de l'extrait -->
+ <record id="extrait_menu_action" model="ir.actions.act_window">
+    <field name="name">extrait</field>
+    <field name="res_model">extrait.extrait</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Enregistrer l'extrait</p>
+    </field>
+  </record>
+  <menuitem id="menu" name="Extrait d'Acte de Naissance"/>
+  <menuitem id="extrait_menu" name="extrait" parent="menu" action="extrait_menu_action"/>
+
+
+
+<!-- form tree du pere-->
+  <record id="pere_tree" model="ir.ui.view">
+    <field name="name">Pere</field>
+    <field name="model">pere.pere</field>
+    <field name="arch" type="xml">
+      <tree string="Pere">
+        <field name="nom" />
+        <field name="prenom" />
+        <field name="profession" />
+        <field name='date'/>
+        <field name ='ville'/>
+        <field name ='matricule'/>
+        <field name="enfants"/>
+      </tree>
+    </field>
+  </record>
+
+
+<!-- form tree de la mere -->
+  <record id="mere_tree" model="ir.ui.view">
+    <field name="name">Mere</field>
+    <field name="model">mere.mere</field>
+    <field name="arch" type="xml">
+      <tree string="Mere">
+        <field name="nom" />
+        <field name="prenom" />
+        <field name="profession" />
+        <field name='date'/>
+        <field name ='ville'/>
+        <field name ='matricule'/>
+        <field name="enfants"/>
+      </tree>
+    </field>
+  </record>
+
+
+<!-- form tree de l' extrait -->
+  <record id="extrait_tree" model="ir.ui.view">
+    <field name="name">extrait</field>
+    <field name="model">extrait.extrait</field>
+    <field name="arch" type="xml">
+      <tree string="extrait">
+        <field name="nom" />
+        <field name="prenom" />
+        <field name="date_de_naissance" />
+        <field name='lieu_de_naissance'/>
+        <field name ='nom_du_pere'/>
+        <field name='nom_de_la_mere'/>
+        <field name ='matricule'/>
+      </tree>
+    </field>
+  </record>
+
+
+<!-- form view du pere-->
+  <record id="pere_view" model="ir.ui.view">
+    <field name="name">pere.form</field>
+    <field name="model">pere.pere</field>
+    <field eval="1" name="priority"/>
+    <field name="arch" type="xml">
+      <form string="pere">
+        <sheet>
+          <field name="photo" widget="image" string="Image" class="oe_avatar" />
+          <div class="oe_title">
+            <h1><field name="nom" placeholder="Nom" /></h1>
+            <h2><field name="prenom" /></h2>
+            <group>
+              <field name='date'/>
+              <field name ='ville'/>
+              <field name='profession'/>
+              <field name ='matricule'/>
+            </group>
+            <notebook>
+							<page string="ENFANTS">
+							  <field name="enfants" widget="one2many_list">
+                  <tree>
+                    <field name="nom"/>
+                    <field name="prenom"/>
+                    <field name="date_de_naissance"/>
+                    <field name ='matricule'/>
+                  </tree>
+                </field>
+							</page>
+						</notebook>
+          </div>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+
+<!-- form view de la mere -->
+  <record id="mere_view" model="ir.ui.view">
+    <field name="name">mere.form</field>
+    <field name="model">mere.mere</field>
+    <field eval="1" name="priority"/>
+    <field name="arch" type="xml">
+      <form string="mere">
+        <sheet>
+          <field name="photo" widget="image" string="Image" class="oe_avatar" />
+          <div class="oe_title">
+            <h1><field name="nom" placeholder="Nom" /></h1>
+            <h2><field name="prenom" /></h2>
+            <group>
+              <field name='date'/>
+              <field name ='ville'/>
+              <field name='profession'/>
+              <field name ='matricule'/>
+            </group>
+            <notebook>
+							<page string="ENFANTS">
+							  <field name="enfants" widget="one2many_list">
+                  <tree>
+                    <field name="nom"/>
+                    <field name="prenom"/>
+                    <field name="date_de_naissance" />
+                    <field name ='matricule'/>
+                  </tree>
+                </field>
+							</page>
+						</notebook>  
+          </div>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+
+  
+
+
+        
+<!-- form view de l extrait -->
+ <record id="extrait_view" model="ir.ui.view">
+    <field name="name">extrait.form</field>
+    <field name="model">extrait.extrait</field>
+    <field eval="1" name="priority"/>
+    <field name="arch" type="xml">
+      <form string="Extrait">
+        <sheet>
+          <div class="oe_title">
+            <h1><field name="nom" placeholder="Nom" /></h1>
+            <h2><field name="prenom" placeholder="Prénoms" /></h2>
+            <group>
+              <field name="date_de_naissance" />
+              <field name='lieu_de_naissance'/>
+              <field name ='nom_du_pere'/>
+              <field name='nom_de_la_mere'/>
+              <field name ='matricule'/>
+            </group>
+          </div>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="paperformat_hrsummary" model="report.paperformat">
+   <field name="name">Extrait d'acte de naissance</field>
+   <field name="default" eval="True"/>
+   <field name="format">custom</field>
+   <field name="page_height">247</field>
+   <field name="page_width">210</field>
+   <field name="orientation">Portrait</field>
+   <field name="margin_top">30</field>
+   <field name="margin_bottom">23</field>
+   <field name="margin_left">5</field>
+   <field name="margin_right">5</field>
+   <field name="header_line" eval="False"/>
+   <field name="header_spacing">20</field>
+   <field name="dpi">90</field>
+  </record>
+
+  <report
+    id="report_session"
+    model="extrait.extrait"
+    string="Extrait imprimable"
+    name="essai.report_saleorder"
+    file="report_session_view"
+    report_type="qweb-pdf"/> 
+  
+  <template id="report_saleorder">
+       <t t-call="web.html_container">
+           <t t-foreach="docs" t-as="doc">
+              <div class="page">
+                <div>
+                  <table style="width: 100%; text-align: center">
+                    <tr >
+                      <td>REPUBLIQUE DE CÔTE D'IVOIRE</td>
+                      <td rowspan="6"><img src="C:\Users\AMINATA PC\Desktop\essai\static\description\icon.png" style="width: 100px;height: 120px;" /></td>
+                      <td>EXTRAIT</td>
+                    </tr>
+                    <tr>
+                     <td>Union - Discipline - Travail</td>
+                     <td>Du registre des actes de l'Etat Civil</td>
+                    </tr>
+                    <tr>
+                      <td>SOUS-PREFECTURE D'ABIDJAN</td>
+                      <td>pour l'année </td>
+                    </tr>
+                    <tr>
+                      <td>...........</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>ETAT CIVIL</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>...........</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table><br/><br/><br/>
+                  <table style="width: 100%; text-align: left; border-bottom: 1px solid black; padding: 2px">
+                    <tr style="width: 100%">
+                      <td style="width:45%; text-align: center">CENTRE DE <b t-field="doc.lieu_de_naissance"/></td>
+                      <td style="padding-left: 20%">Le <b t-field="doc.date_de_naissance"/></td>
+                    </tr>
+                    <tr style="width: 100%;">
+                      <td style="width:45%;  text-align: center">N°32872.6327 du 17/10/1999</td>
+                      <td style="padding-left: 20%">est né(e) <b t-field="doc.nom"/> <b t-field="doc.prenom"/></td>
+                    </tr>
+                    <tr style="width: 100%">
+                      <td style="width:45%; text-align: center">du registre</td>
+                      <td style="padding-left: 20%">à <b t-field="doc.lieu_de_naissance"/></td>
+                    </tr>
+                    <tr style="width: 100%">
+                      <td rowspan="2" style="width:45%; text-align: center">NAISSANCE DE :</td>
+                      <td style="padding-left: 20%">fil(le) de <b t-field="doc.nom_du_pere.nom"/> <b t-field="doc.nom_du_pere.prenom"/></td>
+                    </tr>
+                    <tr style="width: 100%">        
+                      <td style="padding-left: 20%">et de <b t-field="doc.nom_de_la_mere.nom"/> <b t-field="doc.nom_de_la_mere.prenom"/></td>
+                    </tr>
+                    <tr style="width: 100%">
+                      <td style="width:45%; text-align: center"><b t-field="doc.nom"/> <b t-field="doc.prenom"/></td>                               
+                    </tr>
+                    <tr style="width: 100%">
+                      <td style="width:45%; text-align: center">.....................................................................</td>
+                      <td></td>
+                    </tr>
+                    <tr style="width: 100%">
+                      <td style="width:45%; text-align: center">.....................................................................</td>
+                      <td></td>
+                    </tr>
+                    <tr style="width: 100%">
+                      <td style="width:45%; text-align: center">.....................................................................<br/><br/></td>
+                      <td></td>
+                    </tr>
+                  </table><br/>
+                  <table style="width: 100%; text-align: left; border-top: 1px solid black">
+                    <tr>
+                      <td style="width: 100%; text-align: center"><br/>MENTION (éventuellement)</td>
+                    </tr>
+                    <tr>
+                      <td>Marié(e) le ..................................à..................................</td>
+                    </tr>
+                    <tr>
+                      <td>Avec.....................................................................</td>
+                    </tr>
+                    <tr>
+                      <td>mariage dissous par décision de divorce en date du..............................................................................</td>
+                    </tr>
+                    <tr>
+                      <td>décédé(e) le.................................................................</td>
+                    </tr>
+                    <tr>
+                      <td>...................................................................................</td>
+                    </tr>
+                    <tr>
+                      <td style="width: 100%; text-align: center">Certifié le présent extrait conforme aux indications portées au registre.</td>
+                    </tr>
+                    <tr>
+                      <td style="width: 100%; text-align: right"><br/><br/>  Délivré à DABOU le <b t-field="doc.date_de_naissance"/></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+          </t>
+       </t>
+  </template>
+
+</odoo>
