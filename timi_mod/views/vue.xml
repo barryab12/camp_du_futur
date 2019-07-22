@@ -113,6 +113,22 @@
             <group>
               <field name='profession'/>
             </group>
+            <notebook>
+							<page string="Children">
+								<field name="child_ids">
+                  <tree>   
+                    <field name="nom" />
+                    <field name="prenom" />
+                    <field name="date_de_naissance" />
+                    <field name='lieu_de_naissance'/>
+                    <field name='numero_de_l_extrait'/>
+                    <field name='heure'/>
+                    <field name ='matricule'/>
+                    <field name ='nom_de_la_mere'/>
+                  </tree>
+								</field>
+							</page>
+						</notebook> 
           </div>
         </sheet> 
       </form>
@@ -138,6 +154,22 @@
             <group>
               <field name='profession' placeholder="Profession"/>
             </group>
+            <notebook>
+							<page string="children">
+								<field name="child_ids">
+                  <tree>   
+                    <field name="nom" />
+                    <field name="prenom" />
+                    <field name="date_de_naissance" />
+                    <field name='lieu_de_naissance'/>
+                    <field name='numero_de_l_extrait'/>
+                    <field name='heure'/>
+                    <field name ='matricule'/>
+                    <field name ='nom_du_pere'/>
+                  </tree>
+								</field>
+							</page>
+						</notebook>
           </div>
         </sheet>
       </form>

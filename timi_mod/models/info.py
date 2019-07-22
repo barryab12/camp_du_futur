@@ -13,6 +13,7 @@ class PerePere(models.Model):
 	profession = fields.Char(string='Profession')
 	photo = fields.Binary(string='photo')
 	matricule = fields.Char(string='Matricule', compute='_mati', readonly=True, store=True)
+	child_ids = fields.One2many(string='child', comodel_name='extrait.extrait', inverse_name='nom_du_pere')
 
 	@api.depends('nom')
 	def _mati(self):
@@ -44,6 +45,7 @@ class MereMere(models.Model):
 	profession = fields.Char(string='Profession')
 	photo = fields.Binary(string='photo')
 	matricule = fields.Char(string='Matricule', compute='_mati', readonly=True, store=True)
+	child_ids = fields.One2many(string='child', comodel_name='extrait.extrait', inverse_name='nom_de_la_mere')
 
 	@api.depends('nom')
 	def _mati(self):
@@ -82,10 +84,14 @@ class ExtraitExtrait(models.Model):
 	@api.depends('nom')
 	def _mati(self):
 		for rec in self:
-			lee = rec.nom[:3]
+			
+			lee = rec.nom_du_pere.nom[:2]
+			laa = rec.nom_de_la_mere.nom[:2]
+			les = lee + laa
 			s = ''
 			while len(s) < 5:
 				mit = randint(0,9)
 				s += str(mit)
-			rec.matricule = lee.upper() + s
+			rec.matricule = les.upper() + s
+			
 
