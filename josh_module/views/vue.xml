@@ -265,6 +265,11 @@
               </group>
             </div>
           </sheet>
+          <notebook>
+            <page string="Fichiers joints">
+              <field name="upload_fichier" widget="many2many_binary"/>
+            </page>
+          </notebook>
         </form>
       </field>
     </record>

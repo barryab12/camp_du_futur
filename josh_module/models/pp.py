@@ -68,6 +68,7 @@ class ExtraitExtrait(models.Model):
 	date = fields.Date(string='Date de naissance', required=True)
 	ville = fields.Char(string='Ville de naissance', required=True)
 	matricule = fields.Char(string ="Matricule", compute ='_matricule',readonly = True, store=True)
+	upload_fichier = fields.Many2many('ir.attachment', string="Joindre un Fichier")
 
 	@api.depends('nom','matricule')
 	def _matricule(self):
