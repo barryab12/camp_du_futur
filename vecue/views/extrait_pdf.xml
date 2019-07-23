@@ -17,7 +17,7 @@
         id="report_session"
         model="mod.extrait"
         string="PDF"
-        name="vivons.mod_extrait_template"
+        name="vecue.mod_extrait_template"
         file="report_session_view"
         report_type="qweb-pdf" />
 
@@ -29,7 +29,7 @@
                         <table style="width: 100%; text-align: center">
                             <tr >
                                 <td>REPUBLIQUE DE CÔTE D'IVOIRE</td>
-                                <td rowspan="6"><img src="C:\Users\mimi coul\Desktop\vivons\static/cote.png" alt="L'armoirie de la Côte d'Ivoire" style="width: 100px;height: 120px;" /></td>
+                                <td rowspan="6"><img src="C:\Users\mimi coul\Desktop\vecue\static/cote.png" alt="L'armoirie de la Côte d'Ivoire" style="width: 100px;height: 120px;" /></td>
                                 
                                 <td>EXTRAIT</td>
                             </tr>

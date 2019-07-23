@@ -72,7 +72,7 @@ class Extrait(models.Model):
     mere = fields.Many2one(comodel_name="mod.mere", string="Mère")
     matricule = fields.Char(string="Matricule", compute='_mii', store=True)
     attachment_ids = fields.Many2many('ir.attachment', string="upload")
-    file_name = fields.char(string="file name")
+    file_name = fields.Char(string="file name")
 
     @api.depends('n', 'matricule')
     def _mii(self):
