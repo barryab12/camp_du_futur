@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="etudiant_menu_action" model="ir.actions.act_window">
+    <field name="name">etudiant</field>
+    <field name="res_model">etudiant.etudiant</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">note des etudiants</p>
+    </field>
+  </record>
+  <menuitem id="menu" name="etudiant"/>
+  <menuitem id="etudiant_menu" name="etudiant" parent="menu" action="etudiant_menu_action"/>
+  
+  <!-- form tree-->
+  <record id="etudiant_tree" model="ir.ui.view">
+    <field name="name">etudiant</field>
+    <field name="model">etudiant.etudiant</field>
+    <field name="arch" type="xml">
+      <tree string="Etudiant">
+        <field name ='nom'/>
+		<field name ='note'/>
+		<field name ='value'/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- form view-->
+  <record id="etudiant_view" model="ir.ui.view">
+    <field name="name">etudiant.form</field>
+    <field name="model">etudiant.etudiant</field>
+    <field eval="1" name="priority"/>
+    <field name="arch" type="xml">
+      <form string="etudiant">
+        <sheet>
+            <div class="oe_title">
+                <group>
+                    <field name ='nom'/>
+					<field name ='note'/>
+					<field name ='value'/>
+                </group>
+            </div>
+        </sheet> 
+      </form>
+    </field>
+  </record>
+</odoo>
