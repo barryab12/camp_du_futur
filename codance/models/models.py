@@ -1,13 +1,13 @@
-
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api
- 
-class Notation(models.Model):
-    _name = 'model.notation'
-    _rec_name = 'candidat'
+from odoo import models, fields,api
 
-    candidat  = fields.Many2one(commodel_name="res.users", string="candidat" , domain=[('model.notation','in',[5])])
-    note = fields.Selection(string='Note',selection=[('0', '0'), ('1', '1'), ('2', '2'),('3', '3'),('4', '4'),('5', '5'),('6', '6'),('7', '7'),('8', '8'),('9', '9'),('10', '10')])
+
+class EvaluationEvaluation(models.Model):
+	_name = 'evaluation.evaluation'
+	_rec_name = ("noter")
+	
+	noter = fields.Many2one('res.users',string='Selectionner')
+	note = fields.Selection(string=u'Donner une Note',selection=[('0', '0'), ('1', '1'), ('2', '2'),('3', '3'),('4', '4'),('5', '5'),('6', '6'),('7', '7'),('8', '8'),('9', '9'),('10', '10')])
 							
     						
 	@api.onchange('note')
@@ -19,3 +19,14 @@ class Notation(models.Model):
 				if x != '':
 					i += 1
 		rec.note = str(i)
+	
+
+	
+
+
+
+
+	
+	
+	
+	
