@@ -36,6 +36,18 @@
     </field>
   </record>
 
+  <!-- evaluation search view -->
+  <record id="evaluation_view_search" model="ir.ui.view">
+    <field name="name">evaluation.view.search</field>
+    <field name="model">evaluation.evaluation</field>
+    <field name="arch" type="xml">
+      <search string="Search">
+        <field name='noter'/>
+        <field name="nom"/>
+      </search>
+    </field>
+  </record>
+
 
 
 

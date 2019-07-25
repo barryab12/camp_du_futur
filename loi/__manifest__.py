@@ -2,7 +2,7 @@
 {
     'name': "Evaluation de Notes",
     'version': '1.0.0.0',
-    'summary': """Evaluer les notes """,
+    'summary': """Evaluer les etudiants""",
     'category': 'Administration',
 
     'description': """
