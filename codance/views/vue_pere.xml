@@ -7,20 +7,21 @@
     <field name="view_mode">tree,form</field>
     <field name="domain">[]</field>
     <field name="help" type="html">
+      <p class="oe_view_nocontent_create">inscrivez vos notes</p>
     </field>
   </record>
-  <menuitem id="menu" name="Candidat"/>
-  <menuitem id="Candidat_menu" name="Candidat" parent="menu" action="candidat_menu_action"/>
+  <menuitem id="menu" name="Notation"/>
+  <menuitem id="notation_menu" name="notation" parent="menu" action="notation_menu_action"/>
 
 
   <!-- form tree-->
   <record id="notation_tree" model="ir.ui.view">
     <field name="name">model</field>
     <field name="model">model.notation</field>
-    <field name="model.notation" position="candidat">
+    <field name="model.notation" position="candidat"></field>
     <filter name="no_candidat" string="candidat" domain="[('candidat','=',False)]"/>
     <field name="arch" type="xml">
-      <tree string="Candidat">
+      <tree string="notation">
   	    <field name="candidat"/>
         <field name="note"/>
       </tree>
@@ -33,7 +34,7 @@
   	<field name="model">model.notation</field>
   	<field eval="1" name="priority"/>
   	<field name="arch" type="xml">
-    	<form string="candidat">
+    	<form string="Notation">
     	  <sheet>
     	    <div class="oe_title">
             <group>
