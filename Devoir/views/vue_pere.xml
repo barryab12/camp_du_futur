@@ -21,7 +21,6 @@
       <tree string="Etudiant">
         <field name ='nom'/>
 		<field name ='note'/>
-		<field name ='value'/>
       </tree>
     </field>
   </record>
@@ -38,7 +37,6 @@
                 <group>
                     <field name ='nom'/>
 					<field name ='note'/>
-					<field name ='value'/>
                 </group>
             </div>
         </sheet> 

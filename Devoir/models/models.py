@@ -8,10 +8,18 @@ class EtudiantEtudiant(models.Model):
     _name = 'etudiant.etudiant'
     _rec_name =( "note")
 
+    nom = fields.Many2one(comodel_name ="res.users" ,string =  "nom")
+    note = fields.Char(string="note", required=True)
 
-    nom = fields.Char(string="Nom", required=True)
-    note = fields.Many2one(comodel_name ="res.users" ,string =  "Note")
-    value = fields.Selection(string= "Selctionnez un element ?",selection=[('BIEN','bien'),('PASABLE','pasable')])
+    @api.depends('note')
+    @api.multi
+    def _note(self):
+        i = 0
+        for rec  in self:
+            for x in rec.note:
+                if x != '':
+                    i += 1
+        rec.note = str(i)
 
     #name = fields.Char(string="Nom", required=True)
     #prenom = fields.Char(string="Prénopm(s)", required=True)
