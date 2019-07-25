@@ -82,7 +82,9 @@
       <form string="inscription">
         <sheet>
             <div class="oe_title">
-                <h1><field name="nom" placeholder="Nom" /></h1>
+                <group>
+                  <field name="nom"/>
+                </group>
                 <group>
                   <field name ='note'/>
                 </group>
