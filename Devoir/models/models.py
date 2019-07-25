@@ -14,13 +14,11 @@ class Etudiant(models.Model):
     # mon_devoir = fields.One2many('model.depot', 'etudiant')
     # file_name = fields.Char(string="File Name")
     nb_note = fields.One2many('model.depot', 'student')
-    notes = fields.Char(string="Note", compute='_notes', readonly=True)
-    student = fields.Many2one('res.users', string="student")
-    note = fields.Selection(string="Note", default="0", selection=[('n0','0'),('n1','1'),('n2','2'),('n3','3'),('n4','4'),('n5','5'),('n6','6'),('n7','7'),('n8','8'),('n9','9'),('n10','10')], required=True, store=True)
+    note = fields.Char(string="Note", compute='_note', readonly=True)
 
     @api.onchange('nb_note')
     @api.multi
-    def _notes(self):
+    def _note(self):
         i = 0
         for rec in self:
             for n in rec.nb_note:
