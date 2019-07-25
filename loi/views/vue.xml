@@ -52,6 +52,8 @@
           <div class="oe_title">
             <group>
               <field name="noter"/>
+            </group>
+            <group>
               <field name="note"/>
             </group>
           </div>
