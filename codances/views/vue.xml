@@ -3,18 +3,18 @@
 
 
  <!-- menu -->
-  <record id="candidat_menu_action" model="ir.actions.act_window">
-    <field name="name">Candidat</field>
-    <field name="res_model">model.candidat</field>
+  <record id="evaluation_menu_action" model="ir.actions.act_window">
+    <field name="name">evaluation</field>
+    <field name="res_model">evaluation.evaluation</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
     <field name="domain">[]</field>
     <field name="help" type="html">
-      <p class="oe_view_nocontent_create">Noter des candidats</p>
+      <p class="oe_view_nocontent_create">Noter</p>
     </field>
   </record>
-  <menuitem id="menu" name="Candidat"/>
-  <menuitem id="model_menu" name="model" parent="menu" action="model_menu_action"/>
+  <menuitem id="menu" name="Evaluation"/>
+  <menuitem id="evaluation_menu" name="evaluation" parent="menu" action="evaluation_menu_action"/>
 
 
 
@@ -24,9 +24,9 @@
 
 
  <!-- form tree -->
-  <record id="candidat_tree" model="ir.ui.view">
-    <field name="name">candidat</field>
-    <field name="model">model.candidat</field>
+  <record id="evaluation_tree" model="ir.ui.view">
+    <field name="name">evaluation</field>
+    <field name="model">evaluation.evaluation</field>
     <field name="arch" type="xml">
       <tree string="evaluation">
         <field name='noter'/>
@@ -42,9 +42,9 @@
 
         
  <!-- form view -->
-  <record id="candidat_view" model="ir.ui.view">
-    <field name="name">candidat.form</field>
-    <field name="model">model.candidat</field>
+  <record id="evaluation_view" model="ir.ui.view">
+    <field name="name">evaluation.form</field>
+    <field name="model">evaluation.evaluation</field>
     <field eval="1" name="priority"/>
     <field name="arch" type="xml">
       <form string="Evaluation">
