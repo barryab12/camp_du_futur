@@ -23,7 +23,7 @@
 
 
 
- <!-- form tree -->
+ <!-- tree view -->
   <record id="candidat_tree" model="ir.ui.view">
     <field name="name">Candidats</field>
     <field name="model">mod.candidat</field>
