@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="mod_menu_action" model="ir.actions.act_window">
+    <field name="name">Inscription</field>
+    <field name="res_model">mod.inscription</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Veillez vous inscrire</p>
+    </field>
+  </record>
+  <menuitem id="menu" name="Texte de connaissance"/>
+  <menuitem id="mod_menu" name="Inscription" parent="menu" action="mod_menu_action"/>
+
+
+  <record id="mod_menu_action" model="ir.actions.act_window">
+    <field name="name">Noter</field>
+    <field name="res_model">mod.noter</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Veillez octroyer une note</p>
+    </field>
+  </record>
+  <menuitem id="menu" name="Notation"/>
+  <menuitem id="mod_menu" name="Noter" parent="menu" action="mod_menu_action"/>
+  
+<!-- form tree-->
+  <record id="mod_tree" model="ir.ui.view">
+    <field name="name">Inscription</field>
+    <field name="model">mod.inscription</field>
+    <field name="arch" type="xml">
+      <tree string="inscription">
+        <field name="name" />
+        <field name="prenom" />
+        <field name ='matricule'/>
+        <field name ='niveau'/>
+        <field name ='filiere'/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="mod_tree" model="ir.ui.view">
+    <field name="name">Noter</field>
+    <field name="model">mod.noter</field>
+    <field name="arch" type="xml">
+      <tree string="noter">
+        <field name ='nom'/>
+      </tree>
+    </field>
+  </record>
+
+<!-- form view-->
+  <record id="mod_view" model="ir.ui.view">
+    <field name="name">mod.form</field>
+    <field name="model">mod.inscription</field>
+    <field eval="1" name="priority"/>
+    <field name="arch" type="xml">
+      <form string="inscription">
+        <sheet>
+            <div class="oe_title">
+                <h1><field name="name" placeholder="Nom" /></h1>
+                <h2><field name="prenom" placeholder="Prenoms" /></h2>
+                <group>
+                    <field name ='matricule'/>
+                    <field name ='niveau'/>
+                    <field name ='filiere'/>
+                </group>
+            </div>
+        </sheet> 
+      </form>
+    </field>
+  </record>
+  <record id="mod_view" model="ir.ui.view">
+    <field name="name">mod.form</field>
+    <field name="model">mod.noter</field>
+    <field eval="1" name="priority"/>
+    <field name="arch" type="xml">
+      <form string="inscription">
+        <sheet>
+            <div class="oe_title">
+                <h1><field name="nom" placeholder="Nom" /></h1>
+            </div>
+        </sheet> 
+      </form>
+    </field>
+  </record>
+</odoo>
