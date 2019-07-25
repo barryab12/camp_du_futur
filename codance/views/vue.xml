@@ -13,6 +13,9 @@
       <p class="oe_view_nocontent_create">Noter les etudiants</p>
     </field>
   </record>
+
+  <menuitem id="menu" name="Evaluation"/>
+  <menuitem id="evaluation_menu" name="evaluation" parent="menu" action="evaluation_menu_action"/>
   
 
   <!-- form tree -->
@@ -45,10 +48,6 @@
       </form>
     </field>
   </record>
-
-
-  <menuitem id="menu" name="Evaluation"/>
-  <menuitem id="evaluation_menu" name="evaluation" parent="menu" action="evaluation_menu_action"/>
 
 </odoo>
 
