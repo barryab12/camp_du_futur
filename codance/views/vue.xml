@@ -13,17 +13,9 @@
       <p class="oe_view_nocontent_create">Noter les etudiants</p>
     </field>
   </record>
-  <menuitem id="menu" name="Evaluation"/>
-  <menuitem id="evaluation_menu" name="evaluation" parent="menu" action="evaluation_menu_action"/>
+  
 
-
-
-
-
-
-
-
- <!-- form tree -->
+  <!-- form tree -->
   <record id="evaluation_tree" model="ir.ui.view">
     <field name="name">evaluation</field>
     <field name="model">evaluation.evaluation</field>
@@ -35,13 +27,7 @@
     </field>
   </record>
 
-
-
-
-
-
-        
- <!-- form view -->
+  <!-- form view -->
   <record id="evaluation_view" model="ir.ui.view">
     <field name="name">evaluation.form</field>
     <field name="model">evaluation.evaluation</field>
@@ -59,6 +45,10 @@
       </form>
     </field>
   </record>
+
+
+  <menuitem id="menu" name="Evaluation"/>
+  <menuitem id="evaluation_menu" name="evaluation" parent="menu" action="evaluation_menu_action"/>
 
 </odoo>
 
