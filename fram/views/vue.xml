@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <record id="mod_menu_action" model="ir.actions.act_window">
+  <!-- <record id="mod_menu_action" model="ir.actions.act_window">
     <field name="name">Inscription</field>
     <field name="res_model">mod.inscription</field>
     <field name="view_type">form</field>
@@ -11,7 +11,7 @@
     </field>
   </record>
   <menuitem id="menu" name="Texte de connaissance"/>
-  <menuitem id="mod_menu" name="Inscription" parent="menu" action="mod_menu_action"/>
+  <menuitem id="mod_menu" name="Inscription" parent="menu" action="mod_menu_action"/> -->
 
 
   <record id="mod_menu_action" model="ir.actions.act_window">
@@ -28,7 +28,7 @@
   <menuitem id="mod_menu" name="Noter" parent="menu" action="mod_menu_action"/>
   
 <!-- form tree-->
-  <record id="mod_tree" model="ir.ui.view">
+  <!-- <record id="mod_tree" model="ir.ui.view">
     <field name="name">Inscription</field>
     <field name="model">mod.inscription</field>
     <field name="arch" type="xml">
@@ -40,7 +40,7 @@
         <field name ='filiere'/>
       </tree>
     </field>
-  </record>
+  </record> -->
 
   <record id="mod_tree" model="ir.ui.view">
     <field name="name">Noter</field>
@@ -49,12 +49,26 @@
       <tree string="noter">
         <field name ='nom'/>
         <field name ='note'/>
+        <field name="noter_par"/>
       </tree>
     </field>
   </record>
 
+  <!-- mod search view -->
+  <record id="mod_view_search" model="ir.ui.view">
+    <field name="name">mod.view.search</field>
+    <field name="model">mod.noter</field>
+    <field name="arch" type="xml">
+      <search string="Recherche">
+        <field name ='nom'/>
+        <field name ='note'/>
+        <field name="noter_par"/>
+      </search>
+    </field>
+  </record>
+
 <!-- form view-->
-  <record id="mod_view" model="ir.ui.view">
+  <!-- <record id="mod_view" model="ir.ui.view">
     <field name="name">mod.form</field>
     <field name="model">mod.inscription</field>
     <field eval="1" name="priority"/>
@@ -73,7 +87,7 @@
         </sheet> 
       </form>
     </field>
-  </record>
+  </record> -->
   <record id="mod_view" model="ir.ui.view">
     <field name="name">mod.form</field>
     <field name="model">mod.noter</field>
@@ -87,6 +101,7 @@
                 </group>
                 <group>
                   <field name ='note'/>
+                  <field name ='noter_par'/>
                 </group>
             </div>
         </sheet> 

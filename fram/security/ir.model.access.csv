@@ -1,3 +1,2 @@
 id,name,model_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_mod_inscription,access.mod.inscription,model_mod_inscription,base.group_user,1,1,1,0
 access_mod_noter,access.mod.noter,model_mod_noter,base.group_user,1,1,1,0
