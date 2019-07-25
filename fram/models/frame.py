@@ -27,3 +27,14 @@ class NoterNoter(models.Model):
     _name = 'mod.noter'
 
     nom = fields.Many2one(comodel_name="res.users", string='Nom')
+    note = fields.Selection(string='Note',selection=[('0', '0'), ('1', '1'), ('2', '2'),('3', '3'),('4', '4'),('5', '5'),('6', '6'),('7', '7'),('8', '8'),('9', '9'),('10', '10'),('11', '11'),('12', '12'),('13', '13'),('14', '14'),('15', '15'),('16', '16'),('17', '17'),('18', '18')])
+
+    @api.depends('note')
+    @api.multi
+    def _note(self):
+        i = 0
+        for rec in self:
+            for x in rec.note:
+                if x != '':
+                    i += 1
+        rec.note = str(i)
