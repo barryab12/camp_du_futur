@@ -58,7 +58,9 @@
 						<field name="student"/>
 						<field name="nb_note" invisible="1"/>
 						<field name="note"/>
-						<!-- <field name="file_name" invisible="1"/>						 -->
+						<!-- <field name="file_name" invisible="1"/> -->
+						<field name="student"/>
+						<field name="note" widget="selection"/>						 
 					</group>
 					<button name="%(model_depot_wizard)d" type="action" string="Noter un étudiant" />
 					<!-- <notebook>
@@ -91,7 +93,6 @@
 			<form>
 				<group>
 					<!-- <field name="nom_fichier" invisible="1"/> -->
-					<field name="etudiant" widget="selection"/>
 					<field name="student"/>
 					<field name="note" widget="selection"/>
 				</group>
