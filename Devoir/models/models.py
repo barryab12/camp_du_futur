@@ -16,7 +16,7 @@ class Etudiant(models.Model):
     nb_note = fields.One2many('model.depot', 'etudiant', store=True)
     note = fields.Char(string="Note", compute='_note', readonly=True, store=True)
     
-    # iden_copy = fields.Integer(string="Copie Identifiant", compute='_copy', readonly=True, store=True)
+    iden = fields.Integer(string="Copie Identifiant", default=id, readonly=True, store=True)
 
     @api.onchange('nb_note')
     @api.multi
@@ -40,6 +40,5 @@ class Depot_devoir(models.TransientModel):
     # devoir = fields.Binary(string="Charger un fichier", store=True)
     # nom_fichier = fields.Char(string="Nom du fichier")
     
-    etudiant = fields.Many2one('model.etudiant', 'Votre nom', domain=[('name','!=',name], required=True)
-    iden_can = fields.Char(string="Identifiant", related='etudiant.name', readonly=True)
+    etudiant = fields.Many2one('model.etudiant', 'Votre nom', domain=[('name','!=','model.etudiant.name')], required=True)
     note = fields.Selection(string="Note", selection=[('n0','0'),('n1','1'),('n2','2'),('n3','3'),('n4','4'),('n5','5')], default="0", required=True, store=True)
