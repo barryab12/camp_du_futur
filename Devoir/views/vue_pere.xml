@@ -1,0 +1,110 @@
+<odoo>
+	<!-- mod.pere action window -->
+	<record id="model_etudiant_action" model="ir.actions.act_window">
+		<field name="name">Etudiant</field>
+		<field name="res_model">model.etudiant</field>
+		<field name="view_mode">tree,form</field>
+		<field name="view_type">form</field>
+		<field name="help" type="html">
+			<p class="oe_view_nocontent_create">
+				<!-- Add Text Here -->
+			</p><p>
+				<!-- More details about what a user can do with this object will be OK --> 
+			</p>
+		</field>
+	</record>
+
+
+	<!-- mod.pere tree view -->
+	<record id="liste_etudiant" model="ir.ui.view">
+		<field name="name">mod.pere.tree</field>
+		<field name="model">model.etudiant</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+				<field name="prenom"/>
+				<field name="niveau"/>
+				<field name="filiere"/>
+			</tree>
+		</field>
+	</record>
+
+
+	<act_window id="model_depot_wizard"
+				name="Dépot Devoir"
+				src_model="model.etudiant"
+				res_model="model.depot"
+				view_mode="form"
+				target="new"
+				key2="client_action_multi"/>
+	
+
+	<!-- mod.pere form view -->
+	<record id="affiche_etudiant" model="ir.ui.view">
+		<field name="name">model.etudiant.form</field>
+		<field name="model">model.etudiant</field>
+		<field name="arch" type="xml">
+			<form string="">
+				<sheet>						
+					<!-- <field name="photo" widget="image" class="oe_avatar"/>							 -->
+					<div class="oe_title">
+						<h1><field name="name" placeholder="Nom"/></h1>
+						<h2><field name="prenom" placeholder="Prénom(s)"/></h2>
+					</div>
+					<group>
+						<field name="niveau"/>
+						<field name="filiere"/>
+						<field name="nb_note" invisible="1">
+							<tree>
+								<field name="note"/>
+							</tree>
+						</field>
+						<field name="note"/>
+						<!-- <field name="iden"/> -->
+						<!-- <field name="iden_copy"/> -->
+						<!-- <field name="file_name" invisible="1"/>						 -->
+					</group>
+					<button name="%(model_depot_wizard)d" type="action" string="Noter un étudiant" />
+					<!-- <notebook>
+						<page string="Déposer mon travail">
+							<group name="Dépot">
+								<field name="texte"/>
+							</group>
+							<button name="%(model_depot_wizard)d" type="action" string="Noter un étudiant" />
+							<group>
+								<field name="mon_devoir">
+									<tree>
+										<field name="nom_fichier" invisible="1"/>
+										<field name="devoir" widget="binary" filename="nom_fichier"/>
+									</tree>
+								</field>
+							</group>
+						</page>
+						<page string="Corriger des travaux">
+						</page>
+					</notebook>				 -->
+				</sheet>							
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="depot_form">
+		<field name="name">model.depot.form</field>
+		<field name="model">model.depot</field>
+		<field name="arch" type="xml">
+			<form>
+				<group>
+					<!-- <field name="nom_fichier" invisible="1"/> -->
+					<field name="etudiant"/>
+					<field name="note"/>
+					<field name="iden_can"/>
+				</group>
+				<!-- <field name="etudiant"/> -->
+			</form>
+		</field>
+	</record>
+	
+	<menuitem id="menu_principal" name="Correction"/>
+	<menuitem id="menu_etudiant" parent="menu_principal" name="Etudiant" action="model_etudiant_action"/>
+	<!-- <menuitem id="menu_deposer" parent="menu_principal" name="Déposer" action="model_depot_wizard"/> -->
+</odoo>
