@@ -16,7 +16,7 @@ class Etudiant(models.Model):
     nb_note = fields.One2many('model.depot', 'etudiant', store=True)
     note = fields.Char(string="Note", compute='_note', readonly=True, store=True)
     
-    iden = fields.Integer(string="Copie Identifiant", default=id, readonly=True, store=True)
+    iden = fields.Integer(string="Copie Identifiant", default=lambda self: self._context.get('active_ids'), readonly=True, store=True)
 
     @api.onchange('nb_note')
     @api.multi
@@ -27,18 +27,17 @@ class Etudiant(models.Model):
                 if n != '':
                     i += 1
         rec.note = str(i)+" / 5"
-    
-    @api.onchange('name')
+
     @api.multi
     def _iden(self):
         for c in self:
-            c.iden = c.name
+            c.iden = c._context.get('active_id')
     
 class Depot_devoir(models.TransientModel):
     _name = 'model.depot'
 
     # devoir = fields.Binary(string="Charger un fichier", store=True)
     # nom_fichier = fields.Char(string="Nom du fichier")
-    
-    etudiant = fields.Many2one('model.etudiant', 'Votre nom', domain=[('name','!=','model.etudiant.name')], required=True)
+    iden_can = fields.Char('Id name', default=lambda self: self.env['model.etudiant'])
+    etudiant = fields.Many2one('model.etudiant', 'Votre nom', domain=[('name','!=','iden_can')], required=True)
     note = fields.Selection(string="Note", selection=[('n0','0'),('n1','1'),('n2','2'),('n3','3'),('n4','4'),('n5','5')], default="0", required=True, store=True)

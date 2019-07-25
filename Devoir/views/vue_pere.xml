@@ -97,7 +97,7 @@
 					<!-- <field name="nom_fichier" invisible="1"/> -->
 					<field name="etudiant"/>
 					<field name="note"/>
-					<!-- <field name="iden_can"/> -->
+					<field name="iden_can"/>
 				</group>
 				<!-- <field name="etudiant"/> -->
 			</form>
