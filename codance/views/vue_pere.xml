@@ -1,0 +1,48 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<odoo>
+  <record id="notation_menu_action" model="ir.actions.act_window">
+    <field name="name">notation</field>
+    <field name="res_model">model.notation</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+    <field name="help" type="html">
+    </field>
+  </record>
+  <menuitem id="menu" name="Candidat"/>
+  <menuitem id="Candidat_menu" name="Candidat" parent="menu" action="candidat_menu_action"/>
+
+
+  <!-- form tree-->
+  <record id="notation_tree" model="ir.ui.view">
+    <field name="name">model</field>
+    <field name="model">model.notation</field>
+    <field name="model.notation" position="candidat">
+    <filter name="no_candidat" string="candidat" domain="[('candidat','=',False)]"/>
+    <field name="arch" type="xml">
+      <tree string="Candidat">
+  	    <field name="candidat"/>
+        <field name="note"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- form view-->
+  <record id="notation_view" model="ir.ui.view">
+  	<field name="name">notation.form</field>
+  	<field name="model">model.notation</field>
+  	<field eval="1" name="priority"/>
+  	<field name="arch" type="xml">
+    	<form string="candidat">
+    	  <sheet>
+    	    <div class="oe_title">
+            <group>
+              <field name="candidat"/>
+              <field name="note"/>
+            </group>
+          </div>  
+    		</sheet>
+  	  </form>
+  	</field>
+  </record>
+</odoo>
