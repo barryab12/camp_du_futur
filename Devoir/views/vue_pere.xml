@@ -93,7 +93,7 @@
 					<!-- <field name="nom_fichier" invisible="1"/> -->
 					<field name="etudiant" widget="selection"/>
 					<field name="student"/>
-					<field name="note" widget="radio"/>
+					<field name="note" widget="selection"/>
 				</group>
 				<!-- <field name="etudiant"/> -->
 			</form>

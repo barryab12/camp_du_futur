@@ -33,4 +33,4 @@ class Depot_devoir(models.TransientModel):
     # nom_fichier = fields.Char(string="Nom du fichier")
     student = fields.Many2one('res.users', string="student")
     etudiant = fields.Many2one('model.etudiant', 'Votre nom')
-    note = fields.Selection(string="Note", default="0", selection=[('n0','0'),('n1','1'),('n2','2'),('n3','3'),('n4','4'),('n5','5')], required=True, store=True)
+    note = fields.Selection(string="Note", default="0", selection=[('n0','0'),('n1','1'),('n2','2'),('n3','3'),('n4','4'),('n5','5'),('n6','6'),('n7','7'),('n8','8'),('n9','9'),('n10','10')], required=True, store=True)
