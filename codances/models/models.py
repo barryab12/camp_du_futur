@@ -8,7 +8,7 @@ class EvaluationEvaluation(models.Model):
 	
 	noter = fields.Many2one('res.users',string='Selectionner')
 	note = fields.Selection(string=u'Note',selection=[('0', '0'), ('1', '1'), ('2', '2'),('3', '3'),('4', '4'),('5', '5'),('6', '6'),('7', '7'),('8', '8'),('9', '9'),('10', '10')])
-							
+	identité = fields.Char(string='vous etes notez')						
     						
 	@api.depends('note')
 	@api.multi
@@ -18,7 +18,7 @@ class EvaluationEvaluation(models.Model):
 			for x in rec.note:
 				if x != '':
 					i += 1
-		rec.note = str(i)
+		rec.note = str(i) + " /5"
 	
 
 	

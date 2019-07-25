@@ -31,12 +31,24 @@
       <tree string="evaluation">
         <field name='noter'/>
         <field name="note"/>
+        <field name="identité"/>
       </tree>
     </field>
   </record>
 
 
-
+  <!-- evaluation search view -->
+  <record id="evaluation_view_search" model="ir.ui.view">
+    <field name="name">evaluation.view.search</field>
+    <field name="model">evaluation.evaluation</field>
+    <field name="arch" type="xml">
+      <search string="search">
+        <field name='noter'/>
+        <field name="note"/>
+        <field name="identité"/>
+      </search>
+    </field>
+  </record>
 
 
 
@@ -53,6 +65,7 @@
             <group>
               <field name="noter"/>
               <field name="note"/>
+              <field name="identité" placeholder="entrez votre nom et prenom"/>
             </group>
           </div>
         </sheet>
