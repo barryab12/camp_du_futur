@@ -8,13 +8,14 @@
   		<field name="view_mode">tree,form</field>
   		<field name="domain">[]</field>
   	</record>
-    <menuitem id="menu" name="Correction"/>
+
+    <menuitem id="menu" name="Eval"/>
   	<menuitem id="candidat_menu" parent="menu" name="Candidat" action="candidat_menu_action"/>
 
 
 
   	<!-- candidat tree view -->
-  	<record id="liste_etudiant" model="ir.ui.view">
+  	<record id="liste_candidat" model="ir.ui.view">
   		<field name="name">candidat.tree</field>
   		<field name="model">candidat.candidat</field>
   		<field name="arch" type="xml">
@@ -44,7 +45,6 @@
   		<field name="arch" type="xml">
   			<form string="">
   				<sheet>
-  					<!-- <field name="photo" widget="image" class="oe_avatar"/>							 -->
   					<div class="oe_title">
   						<h1><field name="name" placeholder="Nom"/></h1>
   						<h2><field name="prenom" placeholder="Prénom(s)"/></h2>
@@ -52,11 +52,15 @@
   					<group>
   						<field name="niveau"/>
   						<field name="filiere"/>
-  						<field name="nb_note" invisible="1"/>
-  						<field name="note"/>
-
+  						<field name="nb_note" invisible="1">
+                <tree>
+                	<field name="note"/>
+                </tree>
+              </field>
+              <field name="note"/>
+  						<field name="identifiant"/>
   					</group>
-  					<button name="%(model_depot_wizard)d" type="action" string="Noter un étudiant" />
+  					<button name="%(model_depot_wizard)d" type="action" string="Noter un candidat" />
   				</sheet>
   			</form>
   		</field>
@@ -68,12 +72,10 @@
   		<field name="arch" type="xml">
   			<form>
   				<group>
-  					<!-- <field name="nom_fichier" invisible="1"/> -->
-  					<field name="etudiant" widget="selection"/>
-  					<field name="student"/>
-  					<field name="note" widget="radio"/>
+  					<field name="candidat"/>
+  					<field name="note"/>
+  					<field name="identifiant_can"/>
   				</group>
-  				<!-- <field name="etudiant"/> -->
   			</form>
   		</field>
   	</record>
