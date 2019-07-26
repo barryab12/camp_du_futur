@@ -82,7 +82,7 @@
 
     <record id="candidat_view_search" model="ir.ui.view">
       <field name="name">candidat.search</field>
-      <field name="model">candidat.candidat</field>
+      <field name="model">depot.depot</field>
       <field name="arch" type="xml">
         <search string="Rechercher">
           <field name="candidat"/>
