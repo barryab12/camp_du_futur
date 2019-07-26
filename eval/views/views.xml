@@ -52,7 +52,7 @@
   					<group>
   						<field name="niveau"/>
   						<field name="filiere"/>
-  						<field name="nb_note" invisible="1">
+  						<field name="note_chif" invisible="1">
                 <tree>
                 	<field name="note"/>
                 </tree>
