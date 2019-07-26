@@ -4,16 +4,13 @@
   	<record id="candidat_menu_action" model="ir.actions.act_window">
   		<field name="name">Candidat</field>
   		<field name="res_model">candidat.candidat</field>
-  		<field name="view_mode">tree,form</field>
   		<field name="view_type">form</field>
-  		<field name="help" type="html">
-  			<p class="oe_view_nocontent_create">
-  				<!-- Add Text Here -->
-  			</p><p>
-  				<!-- More details about what a user can do with this object will be OK -->
-  			</p>
-  		</field>
+  		<field name="view_mode">tree,form</field>
+  		<field name="domain">[]</field>
   	</record>
+    <menuitem id="menu" name="Correction"/>
+  	<menuitem id="candidat_menu" parent="menu" name="Candidat" action="candidat_menu_action"/>
+
 
 
   	<!-- candidat tree view -->
