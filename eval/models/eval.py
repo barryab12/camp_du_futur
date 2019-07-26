@@ -10,7 +10,7 @@ class Candidat(models.Model):
     prenom = fields.Char(string="Prénopm(s)", required=True)
     niveau = fields.Selection(string="Niveau", selection=[('L1','Licence 1'),('L2','Licence 2'),('L3','Licence 3')])
     filiere = fields.Selection(string="Filière", selection=[('SI','SEI / IIM'),('RT','RIT / TCOM'),('II','IDA / IG')])
-    note_chif = fields.One2many('model.depot', 'etudiant', store=True)
+    note_chif = fields.One2many('depot.depot', 'candidat', store=True)
     note = fields.Char(string="Note", compute='_note', readonly=True, store=True)
 
     identifiant = fields.Integer(string="Copie identifiant", default=lambda self: self._context.get('active_ids'), readonly=True, store=True)
@@ -35,6 +35,6 @@ class Depot(models.TransientModel):
 
     # devoir = fields.Binary(string="Charger un fichier", store=True)
     # nom_fichier = fields.Char(string="Nom du fichier")
-    identifiant_can = fields.Char('Id name', default=lambda self: self.env['model.etudiant'])
+    identifiant_can = fields.Char('Id name', default=lambda self: self.env['candidat.candidat'])
     candidat = fields.Many2one('candidat.candidat', 'Votre nom', domain=[('name','!=','identifiant_can')], required=True)
     note = fields.Selection(string="Note", selection=[('A','0 - 5'),('B','5-10'),('C','10-15'),('D','15-20')], default="0", required=True, store=True)
