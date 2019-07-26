@@ -217,4 +217,53 @@
     </field>
   </record>
 
+  <record id="view_pere_search" model="ir.ui.view">
+      <field name="name">mod.pere.search</field>
+      <field name="model">mod.pere</field>
+      <field name="arch" type="xml">
+          <search string="String">
+              <field name="matricule" />
+              <field name="nom" />
+              <field name="prenom" />
+              <field name="profession" />
+              <field name='date'/>
+              <field name ='ville'/>
+          </search>
+      </field>
+  </record>
+
+  <record id="view_mere_search" model="ir.ui.view">
+      <field name="name">mod.mere.search</field>
+      <field name="model">mod.mere</field>
+      <field name="arch" type="xml">
+          <search string="String">
+              <field name="matricule" />
+              <field name="nom" />
+              <field name="prenom" />
+              <field name="profession" />
+              <field name='date'/>
+              <field name ='ville'/>
+          </search>
+      </field>
+  </record>
+
+  <record id="view_extrait_search" model="ir.ui.view">
+      <field name="name">mod.extrait.search</field>
+      <field name="model">mod.extrait</field>
+      <field name="arch" type="xml">
+          <search string="String">
+              <field name="matricule" />
+              <field name="noms" />
+              <field name="date" />
+              <field name ='lieu'/>
+              <field name="centre" />
+              <field name ='genre'/>
+              <field name='heure' />
+              <field name ='pere'/>
+              <field name ='mere' />
+              <field name ='fait'/>
+          </search>
+      </field>
+  </record>
+
 </odoo>

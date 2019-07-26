@@ -71,4 +71,4 @@ class Extrait(models.Model):
 
 	@api.depends('noms','matricule')
 	def _matr(self):
-		self.matricule = self.pere.nom[:2].upper() + self.mere.nom[:2].upper() + str(randrange(99999))
+		self.matricule = self.pere.nom[:2].upper() + self.mere.nom[:2].upper() + str(randrange(999))
