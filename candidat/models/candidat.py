@@ -14,6 +14,7 @@ class Candidat(models.Model):
     @api.multi
     def _note(self):
         i = 0
+        res =""
         for rec in self:
             for n in rec.nb_note:
                 if n != '':
