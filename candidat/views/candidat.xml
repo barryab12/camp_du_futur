@@ -1,0 +1,71 @@
+<odoo>
+	<record id="candidat_action" model="ir.actions.act_window">
+		<field name="name">Candidat</field>
+		<field name="res_model">res.users</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- res.users tree view -->
+	<record id="candidat_tree" model="ir.ui.view">
+		<field name="name">user.candidat.tree</field>
+		<field name="model">res.users</field>
+		<field name="inherit_id" ref="base.view_users_tree"/>
+		<field name="arch" type="xml">
+			<tree>
+
+			</tree>
+		</field>
+	</record>
+
+	<act_window id="model_note_wizard"
+				name="Note"
+				src_model="model.utilisateur"
+				res_model="model.note"
+				view_mode="form"
+				target="new"
+				key2="client_action_multi"/>
+	
+
+	<!-- mod.pere form view -->
+	<record id="candidat_form" model="ir.ui.view">
+		<field name="name">user.candidat.form</field>
+		<field name="model">res.users</field>
+		<field name="inherit_id" ref="base.view_users_simple_form"/>
+		<field name="arch" type="xml">
+			<notebook position="inside">
+                <page string="Note">
+                    <group>
+                        <field name="note_info"/>
+						<field name="moy"/>
+                    </group>
+					<button name="%(model_note_wizard)d" type="object" string="Noter un candidat"/>
+                </page>
+				<page string="Détails Notes">
+                    <group>
+                        <field name="nb_note">
+							<field name="noteur"/>
+						</field>
+                    </group>
+                </page>
+            </notebook>
+		</field>
+	</record>
+
+
+	<record model="ir.ui.view" id="candidat_noter_form">
+		<field name="name">candidat.noter.form</field>
+		<field name="model">candidat.noter</field>
+		<field name="arch" type="xml">
+			<form>
+				<group>
+					<field name="cand"/>
+				</group>
+				<group>
+					<field name="note"/>
+				</group>
+			</form>
+		</field>
+	</record>
+	
+	<menuitem id="menu_principal_candidat" name="Candidat" action="candidat_action"/>	
+</odoo>

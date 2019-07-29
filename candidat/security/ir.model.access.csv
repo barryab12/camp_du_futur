@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_model_utilisateur,access.model.utilisateur,model_model_utilisateur,group_candidat,1,1,1,1
+access_model_note,access.model.note,model_model_note,group_candidat,1,1,1,1
+utilisateur_read_all,Tout utilisateur,model_model_utilisateur,,1,0,0,0
