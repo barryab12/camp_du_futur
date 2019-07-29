@@ -17,10 +17,10 @@
 		</field>
 	</record>
 
-	<act_window id="model_note_wizard"
+	<act_window id="candidat_noter_wizard"
 				name="Note"
-				src_model="model.utilisateur"
-				res_model="model.note"
+				src_model="res.users"
+				res_model="candidat.noter"
 				view_mode="form"
 				target="new"
 				key2="client_action_multi"/>
@@ -38,7 +38,7 @@
                         <field name="note_info"/>
 						<field name="moy"/>
                     </group>
-					<button name="%(model_note_wizard)d" type="object" string="Noter un candidat"/>
+					<button name="%(candidat_noter_wizard)d" type="object" string="Noter un candidat"/>
                 </page>
 				<page string="Détails Notes">
                     <group>
