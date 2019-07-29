@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 from random import *
 
-class Utilisateur(models.Model):
+class Candidat(models.Model):
     _inherit = 'res.users'
     
     nb_note = fields.One2many('candidat.noter', 'cand', store=True)
@@ -23,9 +23,7 @@ class Utilisateur(models.Model):
                     else:
                         res = "Vous êtes entrain d'être noté ......"
                         i += 1
-                        note += int(n.note)
-        rec.moy = note / 5
-        rec.note = res
+        rec.note_info = res
     
     def _moy(self):
         i = 0
