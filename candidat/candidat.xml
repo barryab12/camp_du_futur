@@ -1,0 +1,62 @@
+<odoo>
+	<record id="is_student_form" model="ir.ui.view">
+		<field name="model">res.users</field>
+		<field name="inherit_id" ref="base.view_users_form"/>
+		<field name="arch" type="xml">
+			<!-- <notebook position="inside">
+				<page string="Etudiant">
+					<field name="is_student"/>					
+				</page>
+			</notebook> -->
+			<field name="partner_id" position="after">
+				<field name="is_student"/>
+			</field>
+		</field>
+	</record>
+
+
+	<record id="candidat_form" model="ir.ui.view">
+		<field name="model">op.student</field>
+		<field name="inherit_id" ref="openeducat_core.view_op_student_form"/>
+		<field name="arch" type="xml">
+			<notebook position="inside">
+				<page string="Note">
+					<field name="note_info"/>
+					<field name="nb_note">
+						<tree>
+							<field name="note"/>
+							<field name="noteur"/>
+						</tree>
+					</field>
+				</page>
+			</notebook>
+		</field>
+	</record>
+
+	<act_window id="op_student_noter_action"
+			name="Noter un étudiant"
+			src_model="op.student"
+			res_model="op.student.noter"
+			view_mode="form"
+			target="new"
+			key2="client_action_multi"/>
+	
+	<record id="op_student_noter_form" model="ir.ui.view">
+		<field name="name">op.student.noter.form</field>
+		<field name="model">op.student.noter</field>
+		<field name="arch" type="xml">
+			<form string="">
+				<group>
+					<field name="cand"/>
+				</group>
+				<group>
+					<field name="note"/>
+				</group>
+				<group>
+					<field name="noteur"/>
+					<field name="id_noteur"/>
+				</group>
+			</form>
+		</field>
+	</record>
+</odoo>
