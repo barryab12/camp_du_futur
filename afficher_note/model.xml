@@ -1,0 +1,32 @@
+<odoo>
+    <!-- res.users inherit form view -->
+    <record id="u_view_id" model="ir.ui.view">
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <field name="login" position="after">                
+                <field name="notes">
+                    <tree>
+                        <field name="note"/>
+                    </tree>
+                </field>
+                <field name="nb_note"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- op.student inherit form view -->
+    <record id="e_view_id" model="ir.ui.view">
+        <field name="model">op.student</field>
+        <field name="inherit_id" ref="openeducat_core.view_op_student_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Note">
+                    <group>
+                        <field name="notes"/>
+                    </group>
+                </page>
+            </notebook>            
+        </field>
+    </record>
+</odoo>

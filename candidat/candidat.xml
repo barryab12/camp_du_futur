@@ -1,36 +1,8 @@
 <odoo>
-	<record id="is_student_form" model="ir.ui.view">
-		<field name="model">res.users</field>
-		<field name="inherit_id" ref="base.view_users_form"/>
-		<field name="arch" type="xml">
-			<!-- <notebook position="inside">
-				<page string="Etudiant">
-					<field name="is_student"/>					
-				</page>
-			</notebook> -->
-			<field name="partner_id" position="after">
-				<field name="is_student"/>
-			</field>
-		</field>
-	</record>
-
-
 	<record id="candidat_form" model="ir.ui.view">
 		<field name="model">op.student</field>
 		<field name="inherit_id" ref="openeducat_core.view_op_student_form"/>
-		<field name="arch" type="xml">
-			<notebook position="inside">
-				<page string="Note">
-					<field name="note_info"/>
-					<field name="nb_note">
-						<tree>
-							<field name="note"/>
-							<field name="noteur"/>
-						</tree>
-					</field>
-				</page>
-			</notebook>
-		</field>
+		<field name="arch" type="xml"></field>
 	</record>
 
 	<act_window id="op_student_noter_action"
@@ -57,6 +29,23 @@
 					<field name="id_noteur"/>
 				</group>
 			</form>
+		</field>
+	</record>
+
+	<record id="info_form" model="ir.ui.view">
+		<field name="model">res.users</field>
+		<field name="inherit_id" ref="base.view_users_simple_form"/>
+		<field name="arch" type="xml">
+			<field name="mobile" position="after">
+				<field name="info" invisible="1">
+					<tree>
+						<field name="note"/>
+						<field name="noteur"/>
+					</tree>
+				</field>
+				<field name="info_note"/>
+				<field name="moy"/>
+			</field>
 		</field>
 	</record>
 </odoo>
